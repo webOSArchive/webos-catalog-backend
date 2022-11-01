@@ -8,14 +8,15 @@ $count = 0;
 $startDate = "";
 $lastDate = "";
 $apps = array();
+$appVersions = array();
 $devices = array();
 $osVersions = array();
 $clients = array();
 class App
 {
     public $appName;
-    public $appVersion;
     public $count;
+    public $appVersions;
     public $uniqueClients;
 }
 class Device
@@ -52,10 +53,22 @@ while($line = fgets($data)) {
             
             //accumulate (or start) the update check count for this app
             $appid = $lineParts[2];     //first non-date column is the app id
+            $appParts = explode("/", $appid);
+            $appid = $appParts[0];
             if (!array_key_exists($appid, $apps)) {
                 $apps[$appid] = 1;
             } else {
                 $apps[$appid] += 1;
+            }
+            if (count($appParts) > 1) {
+                $appVersion = $appParts[1];
+                //accumulate (or start) the count for this app version
+                if (!array_key_exists($appid, $appVersions)) {
+                    $appVersions[$appid] = array();
+                }
+                if (!in_array($appVersion, $appVersions[$appid])) { 
+                    array_push($appVersions[$appid], $appVersion);
+                }
             }
 
             $deviceString = stripcslashes($lineParts[3]);     //this column is device string
@@ -105,13 +118,8 @@ $i = 1;
 foreach ($apps as $key => $val) {
     if ($i <= $topAppCount) {
         $thisApp = new App();
-        $appParts = explode("/", $key);
-        $thisApp->appName= $appParts[0];
-        $appVersion = null;
-        if (count($appParts) > 1) {
-            $appVersion = $appParts[1];
-        }
-        $thisApp->appVersion = $appVersion;
+        $thisApp->appName = $key;
+        $thisApp->appVersions = $appVersions[$key];
         $thisApp->count = $val;
         $thisApp->uniqueClients = count($clients[$key]);
         $downloadReport->topApps[$i] = $thisApp;

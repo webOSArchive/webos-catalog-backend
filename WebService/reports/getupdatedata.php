@@ -119,7 +119,7 @@ foreach ($apps as $key => $val) {
     if ($i <= $topAppCount) {
         $thisApp = new App();
         $thisApp->appName = $key;
-        if ($appVersions[$key])
+        if ($appVersions['$key']);
             $thisApp->appVersions = $appVersions[$key];
         $thisApp->count = $val;
         $thisApp->uniqueClients = count($clients[$key]);

@@ -12,6 +12,7 @@
 .DS_Store
 WebService/__museumSessions
 WebService/config.php
+*.log
 
 # Exclude files that should come from an archive repo (instead of a code repo)
 #*.ipk

@@ -29,6 +29,7 @@ class DownloadReport
     public $topClients = array();
 }
 
+//get extra data
 function getDetailData($host, $myIdx) {
     if (!isset($myIdx)) {$myIdx = $id;}
     //Get the JSON file over HTTP to the configured server,
@@ -40,7 +41,9 @@ function getDetailData($host, $myIdx) {
     return json_decode($content, true);
 }
 
+//get the log data
 while($line = fgets($data)) {
+    $line = str_replace("\n", "", $line);
     if ($count > 0) {   //skip first line
         $lineParts = explode(",", $line);
         if (count($lineParts) > 2) {
@@ -68,11 +71,11 @@ while($line = fgets($data)) {
     }
     $count++;
 }
-arsort($apps);  //sort descending by count
-arsort($clients);  //sort descending by count
 
 //format report object, with extra data
 $downloadReport = new DownloadReport();
+
+arsort($apps);  //sort apps descending by count
 $i = 1;
 foreach ($apps as $key => $val) {
     if ($i <= $topAppCount) {
@@ -88,6 +91,8 @@ foreach ($apps as $key => $val) {
         break;
     }
 }
+
+arsort($clients);  //sort clients descending by count
 $i = 1;
 foreach ($clients as $key => $val) {
     if ($i <= $topClientCount) {

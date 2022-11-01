@@ -2,99 +2,147 @@
 $config = include('../config.php');
 $data = fopen('../logs/updatecheck.log', 'r');
 
-$topAppCount = 10;
-$topClientCount = 10;
+$topAppCount = 15;
+$topDeviceCount = 15;
 $count = 0;
 $startDate = "";
 $lastDate = "";
 $apps = array();
+$devices = array();
+$osVersions = array();
 $clients = array();
 class App
 {
-    public $appId;
     public $appName;
+    public $appVersion;
+    public $count;
+    public $uniqueClients;
+}
+class Device
+{
+    public $deviceString;
     public $count;
 }
-class Client
+class OSVersion
 {
-    public $clientString;
+    public $osVersionString;
     public $count;
 }
 class DownloadReport
 {
     public $firstDate;
     public $lastDate;
-    public $totalDownloads;
+    public $totalChecks;
     public $topApps = array();
-    public $topClients = array();
+    public $topDevices = array();
+    public $topOSVersions = array();
 }
 
-function getDetailData($host, $myIdx) {
-    if (!isset($myIdx)) {$myIdx = $id;}
-    //Get the JSON file over HTTP to the configured server,
-    $mypath = "http://{$host}/{$myIdx}.json";
-
-    $myfile  = fopen($mypath, "rb");
-    $content = stream_get_contents($myfile);
-    fclose($myfile);
-    return json_decode($content, true);
-}
-
+//get the log data
 while($line = fgets($data)) {
+    $line = str_replace("\n", "", $line);
+    $line = stripcslashes($line);
     if ($count > 0) {   //skip first line
         $lineParts = explode(",", $line);
-        if (count($lineParts) > 2) {
+        if (count($lineParts) > 3) {
             if ($count == 1) {  //the first item has our earliest date
                 $startDate = $lineParts[0];
             }
             $lastDate = $lineParts[0];  //every subsequent item has the latest date (so far)
             
-            //accumulate (or start) the count for this app
-            $appid = $lineParts[1];     //first non-date column is the app id
+            //accumulate (or start) the update check count for this app
+            $appid = $lineParts[2];     //first non-date column is the app id
             if (!array_key_exists($appid, $apps)) {
                 $apps[$appid] = 1;
             } else {
                 $apps[$appid] += 1;
             }
 
-            $clientstring = $lineParts[2];     //last column is client data
-            //accumulate (or start) the count for this client
-            if (!array_key_exists($clientstring, $clients)) {
-                $clients[$clientstring] = 1;
+            $deviceString = stripcslashes($lineParts[3]);     //this column is device string
+            $deviceString = str_replace("//", "/", $deviceString);
+            $deviceString = explode("/", $deviceString);
+            $deviceName = $deviceString[0];
+            //accumulate (or start) the count for this device
+            if (!array_key_exists($deviceName, $devices)) {
+                $devices[$deviceName] = 1;
             } else {
-                $clients[$clientstring] += 1;
+                $devices[$deviceName] += 1;
+            }
+
+            if ($deviceName != "Mozilla") { //  Enyo 2 behaves differently
+                $osVersion = $deviceString[1];   
+            } 
+            else {
+                $osVersion = $deviceString[2];
+                $osVersion = explode(";", $osVersion);
+                $osVersion = $osVersion[0];
+            }
+            //accumulate (or start) the count for this device version
+            if (!array_key_exists($osVersion, $osVersions)) {
+                $osVersions[$osVersion] = 1;
+            } else {
+                $osVersions[$osVersion] += 1;
+            }
+
+            //accumulate (or start) the client count for this app
+            $clientid = $lineParts[4];     //last column is the client identifier
+            if (!array_key_exists($appid, $clients)) {
+                $clients[$appid] = array();
+            }    
+            if (!in_array($clientid, $clients[$appid])) {
+                array_push($clients[$appid], $clientid);
             }
         }
     }
     $count++;
 }
-arsort($apps);  //sort descending by count
-arsort($clients);  //sort descending by count
 
-//format report object, with extra data
+//format report object
 $downloadReport = new DownloadReport();
+
+arsort($apps);  //sort apps descending by count
 $i = 1;
 foreach ($apps as $key => $val) {
     if ($i <= $topAppCount) {
-        $appDetail = getDetailData($config["metadata_host"], $key);
-        $appName = $appDetail['publicApplicationId'];
         $thisApp = new App();
-        $thisApp->appId = $key;
-        $thisApp->appName = $appName;
+        $appParts = explode("/", $key);
+        $thisApp->appName= $appParts[0];
+        $appVersion = null;
+        if (count($appParts) > 1) {
+            $appVersion = $appParts[1];
+        }
+        $thisApp->appVersion = $appVersion;
         $thisApp->count = $val;
+        $thisApp->uniqueClients = count($clients[$key]);
         $downloadReport->topApps[$i] = $thisApp;
         $i++;
     } else {
         break;
     }
 }
+
+arsort($devices);  //sort device types descending by count
 $i = 1;
-foreach ($clients as $key => $val) {
-    if ($i <= $topClientCount) {
-        $thisClient = new Client();
-        $thisClient->clientString = $key;
-        $thisClient->count = $val;
-        $downloadReport->topClients[$i] = $thisClient;
+foreach ($devices as $key => $val) {
+    if ($i <= $topDeviceCount) {
+        $thisDevice = new Device();
+        $thisDevice->deviceString = $key;
+        $thisDevice->count = $val;
+        $downloadReport->topDevices[$i] = $thisDevice;
+        $i++;
+    } else {
+        break;
+    }
+}
+
+arsort($osVersions);  //sort os versions descending by count
+$i = 1;
+foreach ($osVersions as $key => $val) {
+    if ($i <= $topDeviceCount) {
+        $thisOS = new OSVersion();
+        $thisOS->osVersionString = $key;
+        $thisOS->count = $val;
+        $downloadReport->topOSVersions[$i] = $thisOS;
         $i++;
     } else {
         break;
@@ -102,7 +150,7 @@ foreach ($clients as $key => $val) {
 }
 $downloadReport->firstDate = $startDate;
 $downloadReport->lastDate = $lastDate;
-$downloadReport->totalDownloads = $count;
+$downloadReport->totalChecks = $count;
 
 //return report object as JSON
 header('Content-Type: application/json');

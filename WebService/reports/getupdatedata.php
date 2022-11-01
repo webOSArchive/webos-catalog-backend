@@ -52,22 +52,23 @@ while($line = fgets($data)) {
             $lastDate = $lineParts[0];  //every subsequent item has the latest date (so far)
             
             //accumulate (or start) the update check count for this app
-            $appid = $lineParts[2];     //first non-date column is the app id
-            $appParts = explode("/", $appid);
-            $appid = $appParts[0];
-            if (!array_key_exists($appid, $apps)) {
-                $apps[$appid] = 1;
+            $appName = $lineParts[2];     //first non-date column is the app name
+            $appParts = explode("/", $appName);
+            $appName = $appParts[0];
+            $appId = str_replace(" ", "", $appName);
+            if (!array_key_exists($appName, $apps)) {
+                $apps[$appName] = 1;
             } else {
-                $apps[$appid] += 1;
+                $apps[$appName] += 1;
             }
             if (count($appParts) > 1) {
                 $appVersion = $appParts[1];
                 //accumulate (or start) the count for this app version
-                if (!array_key_exists($appid, $appVersions)) {
-                    $appVersions[$appid] = array();
+                if (!array_key_exists($appId, $appVersions)) {
+                    $appVersions[$appId] = array();
                 }
-                if (!in_array($appVersion, $appVersions[$appid])) { 
-                    array_push($appVersions[$appid], $appVersion);
+                if (!in_array($appVersion, $appVersions[$appId])) { 
+                    array_push($appVersions[$appId], $appVersion);
                 }
             }
 
@@ -99,11 +100,11 @@ while($line = fgets($data)) {
 
             //accumulate (or start) the client count for this app
             $clientid = $lineParts[4];     //last column is the client identifier
-            if (!array_key_exists($appid, $clients)) {
-                $clients[$appid] = array();
+            if (!array_key_exists($appId, $clients)) {
+                $clients[$appId] = array();
             }    
-            if (!in_array($clientid, $clients[$appid])) {
-                array_push($clients[$appid], $clientid);
+            if (!in_array($clientid, $clients[$appId])) {
+                array_push($clients[$appId], $clientid);
             }
         }
     }
@@ -119,10 +120,10 @@ foreach ($apps as $key => $val) {
     if ($i <= $topAppCount) {
         $thisApp = new App();
         $thisApp->appName = $key;
-        if ($appVersions['$key']);
-            $thisApp->appVersions = $appVersions[$key];
+        $appId = str_replace(" ", "", $key);
+        $thisApp->appVersions = $appVersions[$appId];
         $thisApp->count = $val;
-        $thisApp->uniqueClients = count($clients[$key]);
+        $thisApp->uniqueClients = count($clients[$appId]);
         $downloadReport->topApps[$i] = $thisApp;
         $i++;
     } else {
@@ -149,7 +150,8 @@ $i = 1;
 foreach ($osVersions as $key => $val) {
     if ($i <= $topDeviceCount) {
         $thisOS = new OSVersion();
-        $thisOS->osVersionString = $key;
+        $appId = str_replace(" ", "", $key);
+        $thisOS->osVersionString = $appId;
         $thisOS->count = $val;
         $downloadReport->topOSVersions[$i] = $thisOS;
         $i++;

@@ -11,6 +11,9 @@ $lastDate = "";
 $apps = array();
 $appVersions = array();
 $devices = array();
+$uniqueClients = array();
+$uniqueDevices = array();
+$uniqueOSDevices = array();
 $osVersions = array();
 $clients = array();
 class App
@@ -29,17 +32,20 @@ class Device
 {
     public $deviceString;
     public $count;
+    public $uniqueDevices;
 }
 class OSVersion
 {
     public $osVersionString;
     public $count;
+    public $uniqueOSDevices;
 }
 class DownloadReport
 {
     public $firstDate;
     public $lastDate;
     public $totalChecks;
+    public $uniqueClients;
     public $topApps = array();
     public $topDevices = array();
     public $topOSVersions = array();
@@ -90,6 +96,7 @@ while($line = fgets($data)) {
                 }
             }
 
+            /* Devices */
             $deviceString = stripcslashes($lineParts[3]);     //this column is device string
             $deviceString = str_replace("//", "/", $deviceString);
             $deviceString = explode("/", $deviceString);
@@ -100,7 +107,16 @@ while($line = fgets($data)) {
             } else {
                 $devices[$deviceName] += 1;
             }
+            //accumulate unique device count by device name
+            if (!array_key_exists($deviceName, $uniqueDevices)){
+                $uniqueDevices[$deviceName] = array($clientid);
+            }
+            else{
+                if (!in_array($clientid, $uniqueDevices[$deviceName]))
+                    array_push($uniqueDevices[$deviceName], $clientid);
+            }
 
+            /* OS Version */
             if ($deviceName != "Mozilla") { //  Enyo 2 behaves differently
                 $osVersion = $deviceString[1];   
             } 
@@ -115,9 +131,21 @@ while($line = fgets($data)) {
             } else {
                 $osVersions[$osVersion] += 1;
             }
+            //accumulate unique device account by os name
+            if (!array_key_exists($osVersion, $uniqueOSDevices)){
+                $uniqueOSDevices[$osVersion] = array($clientid);
+            }
+            else{
+                if (!in_array($clientid, $uniqueOSDevices[$osVersion]))
+                    array_push($uniqueOSDevices[$osVersion], $clientid);
+            }
 
-            //accumulate (or start) the client count for this app
+            /* Clients */
             $clientid = $lineParts[4];     //last column is the client identifier
+            if (!in_array($clientid, $uniqueClients)) {
+                array_push($uniqueClients, $clientid);
+            }
+            //accumulate (or start) the client count for this app
             if (!array_key_exists($appId, $clients)) {
                 $clients[$appId] = array();
             }    
@@ -156,6 +184,7 @@ foreach ($devices as $key => $val) {
         $thisDevice = new Device();
         $thisDevice->deviceString = $key;
         $thisDevice->count = $val;
+        $thisDevice->uniqueDevices = count($uniqueDevices[$key]);
         $downloadReport->topDevices[$i] = $thisDevice;
         $i++;
     } else {
@@ -170,6 +199,7 @@ foreach ($osVersions as $key => $val) {
         $thisOS = new OSVersion();
         $thisOS->osVersionString = $key;
         $thisOS->count = $val;
+        $thisOS->uniqueOSDevices = count($uniqueOSDevices[$key]);
         $downloadReport->topOSVersions[$i] = $thisOS;
         $i++;
     } else {
@@ -179,6 +209,8 @@ foreach ($osVersions as $key => $val) {
 $downloadReport->firstDate = $startDate;
 $downloadReport->lastDate = $lastDate;
 $downloadReport->totalChecks = $count;
+$downloadReport->uniqueClients = count($uniqueClients);
+//$downloadReport->uniqueClientDetails = $uniqueClients;
 
 //return report object as JSON
 header('Content-Type: application/json');

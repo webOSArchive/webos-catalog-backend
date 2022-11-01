@@ -3,13 +3,13 @@ if (!isset($config))
     $config = include('../config.php');
 if (!isset($mimeType))
     $mimeType = "application/json";
+else
+    error_reporting(E_ERROR | E_PARSE);
 
 returnDownloadDataFormatted($config, $mimeType);
 
 function returnDownloadDataFormatted($config, $mimeType) {
-        
     $data = fopen('../logs/downloadcount.log', 'r');
-    //error_reporting(E_ERROR | E_PARSE);
     
     $topAppCount = 10;
     $topClientCount = 10;

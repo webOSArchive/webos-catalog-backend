@@ -20,6 +20,11 @@ class App
     public $appVersions;
     public $uniqueClients;
 }
+class AppVersion 
+{
+    public $versionName;
+    public $count;
+}
 class Device
 {
     public $deviceString;
@@ -68,8 +73,20 @@ while($line = fgets($data)) {
                 if (!array_key_exists($appId, $appVersions)) {
                     $appVersions[$appId] = array();
                 }
-                if (!in_array($appVersion, $appVersions[$appId])) { 
-                    array_push($appVersions[$appId], $appVersion);
+                $found = false;
+                foreach ($appVersions[$appId] as $key => $val) {
+                    if ($val->versionName == $appVersion) {
+                        //accumulate and break
+                        $appVersions[$appId][$key]->count++;
+                        $found = true;
+                        break;
+                    }
+                }
+                if (!$found) {           
+                    $thisVersion = new AppVersion();
+                    $thisVersion->versionName = $appVersion;
+                    $thisVersion->count = 1;
+                    array_push($appVersions[$appId], $thisVersion);
                 }
             }
 
@@ -151,8 +168,7 @@ $i = 1;
 foreach ($osVersions as $key => $val) {
     if ($i <= $topDeviceCount) {
         $thisOS = new OSVersion();
-        $appId = str_replace(" ", "", $key);
-        $thisOS->osVersionString = $appId;
+        $thisOS->osVersionString = $key;
         $thisOS->count = $val;
         $downloadReport->topOSVersions[$i] = $thisOS;
         $i++;

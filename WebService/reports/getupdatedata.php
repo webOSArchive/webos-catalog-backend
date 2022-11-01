@@ -1,6 +1,7 @@
 <?php
 $config = include('../config.php');
 $data = fopen('../logs/updatecheck.log', 'r');
+error_reporting(E_ERROR | E_PARSE);
 
 $topAppCount = 15;
 $topDeviceCount = 15;

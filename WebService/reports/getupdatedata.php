@@ -182,11 +182,12 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($apps);  //sort apps descending by count
     $i = 1;
-//    $appVersions = [];
     foreach ($apps as $key => $val) {
         if ($i <= $topAppCount) {
             if (isset($appVersions[$appId]) && is_array($appVersions[$appId]))
                 $versions = $appVersions[$appId];
+            else 
+                $versions = null;
             $thisApp = new UpdateApp();
             $thisApp->appName = $key;
             $appId = str_replace(" ", "", $key);

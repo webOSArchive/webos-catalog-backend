@@ -18,6 +18,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $excluded = array("family chat");
     $appVersions = array();
     $devices = array();
+    $uniqueDevices = array();
     $uniqueOSDevices = array();
     $osVersions = array();
     $clients = array();

@@ -24,6 +24,9 @@ $mimeType = "text/html";
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
+            html, body, div, h1, h2 {
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+            }
             .column {
             float: left;
             width: 33.33%;
@@ -44,14 +47,103 @@ $mimeType = "text/html";
                 }
             }
         </style>
+        <script>
+            function showStats() {
+                var statsDiv = document.getElementById("stats");
+                statsDiv.innerHTML += "<p><b>Report Range:</b><br/>" + downloadReport.firstDate + " - " + downloadReport.lastDate + "</p>";
+                statsDiv.innerHTML += "<p><b>Total Downloads:</b> " + downloadReport.totalDownloads + "</p>";
+                statsDiv.innerHTML += "<p><b>Total Update Checks:</b> " + updateReport.totalChecks + "</p>";
+                statsDiv.innerHTML += "<p><b>Unique Device Count:</b> " + updateReport.uniqueDevices + "</p>";
+            }
+        </script>
     </head>
-    <body>
-    <div style="text-align:center;font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 24px;margin-top:10px; margin-bottom: 18px;">Updater Activity Data</div>
+    <body onload="showStats()">
+    <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Download Data</div>
+    <div class="row">
+        <div class="column" id="stats"><h2>Stats</h2></div>    
+        <div class="column"><canvas id="appsChart"></canvas></div>
+        <div class="column"><canvas id="downloaderChart"></canvas></div>
+    </div> 
+    <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Updater Activity Data</div>
     <div class="row">
         <div class="column"><canvas id="usageChart"></canvas></div>
         <div class="column"><canvas id="deviceChart"></canvas></div>
         <div class="column"><canvas id="osChart"></div>
     </div> 
+
+    <script>
+    var appLabels = [];
+    var appTotals = [];
+    for (let key in downloadReport.topApps) {
+        if (downloadReport.topApps.hasOwnProperty(key)) {
+            console.log(key, downloadReport.topApps[key]);
+            appLabels.push(downloadReport.topApps[key].appName);
+            appTotals.push(downloadReport.topApps[key].count);
+        }
+    }
+    var ctx = document.getElementById('appsChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Most Downloaded Apps'
+                },
+                legend: {
+                    display: false
+                }
+            },
+        },
+        data: {
+        labels: appLabels,
+        datasets: [{ 
+            label: 'Downloads',
+            data: appTotals,
+            backgroundColor: Object.values(CHART_COLORS),
+            fill: true,
+            }]
+        },
+    });
+    </script>
+
+<script>
+    var downloaderLabels = [];
+    var downloaderTotals = [];
+    for (let key in downloadReport.topClients) {
+        if (downloadReport.topClients.hasOwnProperty(key)) {
+            console.log(key, downloadReport.topClients[key]);
+            downloaderLabels.push(downloadReport.topClients[key].clientString);
+            downloaderTotals.push(downloadReport.topClients[key].count);
+        }
+    }
+    var ctx = document.getElementById('downloaderChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Most Downloaded Apps'
+                },
+                legend: {
+                    display: false
+                }
+            },
+        },
+        data: {
+        labels: downloaderLabels,
+        datasets: [{ 
+            label: 'Downloads',
+            data: downloaderTotals,
+            backgroundColor: Object.values(CHART_COLORS),
+            fill: true,
+            }]
+        },
+    });
+    </script>
 
     <script>
     var updateLabels = [];

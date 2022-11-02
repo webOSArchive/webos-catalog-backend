@@ -19,6 +19,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $appVersions = array();
     $devices = array();
     $uniqueDevices = array();
+    $uniqueClientDevices = array();
     $uniqueOSDevices = array();
     $osVersions = array();
     $clients = array();
@@ -27,7 +28,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
         public $appName;
         public $count;
         public $versions;
-        public $uniqueDevices;
+        public $uniqueAppDevices;
     }
     class AppVersion 
     {
@@ -111,8 +112,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
                     /* Clients */
                     $clientid = $lineParts[4];     //last column is the client identifier
-                    if (!in_array($clientid, $uniqueDevices)) {
-                        array_push($uniqueDevices, $clientid);
+                    if (!in_array($clientid, $uniqueClientDevices)) {
+                        array_push($uniqueClientDevices, $clientid);
                     }
                     //accumulate (or start) the client count for this app
                     if (!array_key_exists($appId, $clients)) {
@@ -216,8 +217,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($osVersions);  //sort os versions descending by count
     $i = 1;
-    $uniqueDevices = 0;
-    $uniqueDeviceList = [];
+    //$uniqueDevices = 0;
+    //$uniqueDeviceList = [];
     foreach ($osVersions as $key => $val) {
         if ($i <= $topDeviceCount) {
             if (isset($uniqueOSDevices[$key]) && is_array($uniqueOSDevices[$key])) {
@@ -238,8 +239,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $updateReport->firstDate = $startDate;
     $updateReport->lastDate = $lastDate;
     $updateReport->totalChecks = $count;
-    $updateReport->uniqueDevices = count($uniqueDeviceList);
-    $updateReport->uniqueClientDetails = $uniqueDevices;
+    $updateReport->uniqueDevices = count($uniqueClientDevices);
+    //$updateReport->uniqueClientDetails = $uniqueClientDevices;
 
     //return report object as JSON
     header("Content-Type: " . $mimeType);

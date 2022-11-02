@@ -9,7 +9,7 @@ returnDownloadDataFormatted($config, $mimeType);
 function returnDownloadDataFormatted($config, $mimeType) {
     $data = fopen('../logs/downloadcount.log', 'r');
     
-    $topAppCount = 10;
+    $topAppCount = 20;
     $topClientCount = 10;
     $count = 0;
     $startDate = "";
@@ -68,6 +68,32 @@ function returnDownloadDataFormatted($config, $mimeType) {
                 }
     
                 $clientstring = $lineParts[2];     //last column is client data
+                if (strpos($clientstring, "Windows NT 10.0") !== false) {
+                    $clientstring = "Windows 10";
+                }
+                if (strpos($clientstring, "Windows NT 6.1") !== false) {
+                    $clientstring = "Windows 7";
+                }
+                if (strpos($clientstring, "Linux x86_64") !== false) {
+                    $clientstring = "Linux PC";
+                }
+                if (strpos($clientstring, "Linux; NetCast; U") !== false) {
+                    $clientstring = "Linux Smart TV";
+                }
+                if (strpos($clientstring, "CrOS x86_64") !== false) {
+                    $clientstring = "ChromeOS";
+                }
+                if (strpos($clientstring, "Macintosh; Intel Mac OS X") !== false) {
+                    $clientstring = "Mac Intel";
+                }
+                if (strpos($clientstring, "Linux; Android") !== false) {
+                    $clientstring = "Android";
+                }
+                if (strpos($clientstring, "iPhone;") !== false) {
+                    $clientstring = "iPhone";
+                }
+                
+                
                 //accumulate (or start) the count for this client
                 if (!array_key_exists($clientstring, $clients)) {
                     $clients[$clientstring] = 1;
@@ -116,8 +142,6 @@ function returnDownloadDataFormatted($config, $mimeType) {
     $downloadReport->lastDate = $lastDate;
     $downloadReport->totalDownloads = $count;
     
-    //return report object as JSON
-    //$header = "Content-Type: " . $mimeType;
     header("Content-Type: " . $mimeType);
     echo(json_encode($downloadReport));
 }

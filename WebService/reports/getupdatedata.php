@@ -3,21 +3,13 @@ if (!isset($config))
     $config = include('../config.php');
 if (!isset($mimeType))
     $mimeType = "application/json";
-else
-    error_reporting(E_ERROR | E_PARSE);
 
 returnUpdateDataFormatted($config, $mimeType);
 
 function returnUpdateDataFormatted($config, $mimeType) {
-    if (!isset($config))
-        $config = include('../config.php');
-    if (!$mimeType)
-        $mimeType = "application/json";
-
     $data = fopen('../logs/updatecheck.log', 'r');
-    //error_reporting(E_ERROR | E_PARSE);
 
-    $topAppCount = 20;
+    $topAppCount = 10;
     $topDeviceCount = 10;
     $count = 0;
     $startDate = "";
@@ -26,16 +18,14 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $excluded = array("family chat");
     $appVersions = array();
     $devices = array();
-    $uniqueDevices = array();
-    $uniqueDevices = array();
-    $uniqueDevices = array();
+    $uniqueOSDevices = array();
     $osVersions = array();
     $clients = array();
     class UpdateApp
     {
         public $appName;
         public $count;
-        public $appVersions;
+        public $versions;
         public $uniqueDevices;
     }
     class AppVersion 
@@ -53,7 +43,6 @@ function returnUpdateDataFormatted($config, $mimeType) {
     {
         public $osVersionString;
         public $count;
-        public $uniqueDevices;
     }
     class UpdateReport
     {
@@ -96,6 +85,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
                     }
                     if (count($appParts) > 1) {
                         $appVersion = $appParts[1];
+                        $appVersion = explode("&", $appVersion);
+                        $appVersion = $appVersion[0];
                         //accumulate (or start) the count for this app version
                         if (!array_key_exists($appId, $appVersions)) {
                             $appVersions[$appId] = array();
@@ -171,12 +162,12 @@ function returnUpdateDataFormatted($config, $mimeType) {
                         $osVersions[$osVersion] += 1;
                     }
                     //accumulate unique device account by os name
-                    if (!array_key_exists($osVersion, $uniqueDevices)){
-                        $uniqueDevices[$osVersion] = array($clientid);
+                    if (!isset($uniqueOSDevices) || !array_key_exists($osVersion, $uniqueOSDevices)){
+                        $uniqueOSDevices[$osVersion] = array($clientid);
                     }
                     else{
-                        if (is_array($uniqueDevices[$osVersion]) && !in_array($clientid, $uniqueDevices[$osVersion]))
-                            array_push($uniqueDevices[$osVersion], $clientid);
+                        if (is_array($uniqueOSDevices[$osVersion]) && !in_array($clientid, $uniqueOSDevices[$osVersion]))
+                            array_push($uniqueOSDevices[$osVersion], $clientid);
                     }
                 }
             }
@@ -189,15 +180,15 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($apps);  //sort apps descending by count
     $i = 1;
-    $appVersions = [];
+//    $appVersions = [];
     foreach ($apps as $key => $val) {
         if ($i <= $topAppCount) {
             if (isset($appVersions[$appId]) && is_array($appVersions[$appId]))
-                $appVersions = $appVersions[$appId];
+                $versions = $appVersions[$appId];
             $thisApp = new UpdateApp();
             $thisApp->appName = $key;
             $appId = str_replace(" ", "", $key);
-            $thisApp->appVersions = $appVersions;
+            $thisApp->versions = $versions;
             $thisApp->count = $val;
             $thisApp->uniqueDevices = count($clients[$appId]);
             $updateReport->topApps[$i] = $thisApp;
@@ -228,15 +219,15 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $uniqueDeviceList = [];
     foreach ($osVersions as $key => $val) {
         if ($i <= $topDeviceCount) {
-            if (isset($uniqueDevices[$key]) && is_array($uniqueDevices[$key])) {
-                $uniqueDevices = count($uniqueDevices[$key]);
-                $uniqueDeviceList = $uniqueDevices[$key];
+            if (isset($uniqueOSDevices[$key]) && is_array($uniqueOSDevices[$key])) {
+                $uniqueDevices = count($uniqueOSDevices[$key]);
+                $uniqueDeviceList = $uniqueOSDevices[$key];
             }
             $thisOS = new OSVersion();
             $thisOS->osVersionString = $key;
             $thisOS->count = $val;
             $thisOS->uniqueDevices = $uniqueDevices;
-            $thisOS->uniqueOSDeviceList = $uniqueDeviceList;
+            //$thisOS->uniqueOSDeviceList = $uniqueDeviceList;
             $updateReport->topOSVersions[$i] = $thisOS;
             $i++;
         } else {

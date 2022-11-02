@@ -9,12 +9,12 @@ $mimeType = "text/html";
             const downloadReport = <?php include('getdownloaddata.php'); ?>;
             const updateReport = <?php include('getupdatedata.php'); ?>;
             const CHART_COLORS = {
+                blue: 'rgb(0,48,143)',
+                purple: 'rgb(153, 102, 255)',
                 dimred: 'rgb(255, 99, 132)',
                 orange: 'rgb(255,103,0)',
                 yellow: 'rgb(255, 205, 86)',
                 dimgreen: 'rgb(75, 192, 192)',
-                blue: 'rgb(0,48,143)',
-                purple: 'rgb(153, 102, 255)',
                 brightred: 'rgb(211,33,45)',
                 grey: 'rgb(201, 203, 207)',
                 teal: 'rgb(77,166,255)',
@@ -33,11 +33,15 @@ $mimeType = "text/html";
             width: 33.33%;
             }
 
+            .halfcolumn {
+            float: left;
+            width: 38%;
+            }
+
             #stats {
                 font-size: smaller;
                 color: dimgray;
                 width: 20% !important;
-                padding-left: 20px;
             }
             /* Clear floats after the columns */
             .row:after {
@@ -50,6 +54,18 @@ $mimeType = "text/html";
             @media screen and (max-width: 900px) {
                 .column {
                 width: 100%;
+                font-size: 12px;
+                }
+            }
+            @media screen and (max-width: 900px) {
+                .halfcolumn {
+                width: 100%;
+                font-size: 12px;
+                }
+            }
+            @media screen and (max-width: 900px) {
+                #stats {
+                width: 100% !important;
                 font-size: 12px;
                 }
             }
@@ -68,8 +84,8 @@ $mimeType = "text/html";
     <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Download Data</div>
     <div class="row">
         <div class="column" id="stats"><h2>Overall Stats</h2></div>    
-        <div class="column" style="margin-right: 20px"><canvas id="appsChart"></canvas></div>
-        <div class="column"><canvas id="downloaderChart"></canvas></div>
+        <div class="halfcolumn" style="margin-right: 20px;"><canvas id="appsChart"></canvas></div>
+        <div class="halfcolumn"><canvas id="downloaderChart"></canvas></div>
     </div> 
     <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Updater Activity Data</div>
     <div class="row">
@@ -77,7 +93,7 @@ $mimeType = "text/html";
         <div class="column"><canvas id="deviceChart"></canvas></div>
         <div class="column"><canvas id="osChart"></div>
     </div> 
-
+    <div style="text-align:center;font-size: 12px;margin-top:10px;color:dimgray;">(Outer ring is Total Update Checks, Inner ring is Unique Device Update checks. As in: '# of inner ring devices have checked for updates # of outer ring times')</div>
     <script>
     var appLabels = [];
     var appTotals = [];
@@ -93,6 +109,7 @@ $mimeType = "text/html";
         type: 'bar',
         options: {
             responsive: true,
+            indexAxis: 'y',
             plugins: {
                 title: {
                     display: true,

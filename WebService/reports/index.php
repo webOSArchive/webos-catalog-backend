@@ -27,11 +27,18 @@ $mimeType = "text/html";
             html, body, div, h1, h2 {
                 font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
             }
+
             .column {
             float: left;
             width: 33.33%;
             }
 
+            #stats {
+                font-size: smaller;
+                color: dimgray;
+                width: 20% !important;
+                padding-left: 20px;
+            }
             /* Clear floats after the columns */
             .row:after {
             content: "";
@@ -40,7 +47,7 @@ $mimeType = "text/html";
             }
 
             /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 .column {
                 width: 100%;
                 font-size: 12px;
@@ -60,8 +67,8 @@ $mimeType = "text/html";
     <body onload="showStats()">
     <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Download Data</div>
     <div class="row">
-        <div class="column" id="stats"><h2>Stats</h2></div>    
-        <div class="column"><canvas id="appsChart"></canvas></div>
+        <div class="column" id="stats"><h2>Overall Stats</h2></div>    
+        <div class="column" style="margin-right: 20px"><canvas id="appsChart"></canvas></div>
         <div class="column"><canvas id="downloaderChart"></canvas></div>
     </div> 
     <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Updater Activity Data</div>
@@ -126,7 +133,7 @@ $mimeType = "text/html";
             plugins: {
                 title: {
                     display: true,
-                    text: 'Most Downloaded Apps'
+                    text: 'Most Common Downloaders'
                 },
                 legend: {
                     display: false

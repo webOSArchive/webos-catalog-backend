@@ -25,9 +25,9 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $apps = array();
     $appVersions = array();
     $devices = array();
-    $uniqueClients = array();
     $uniqueDevices = array();
-    $uniqueOSDevices = array();
+    $uniqueDevices = array();
+    $uniqueDevices = array();
     $osVersions = array();
     $clients = array();
     class UpdateApp
@@ -35,7 +35,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
         public $appName;
         public $count;
         public $appVersions;
-        public $uniqueClients;
+        public $uniqueDevices;
     }
     class AppVersion 
     {
@@ -52,14 +52,14 @@ function returnUpdateDataFormatted($config, $mimeType) {
     {
         public $osVersionString;
         public $count;
-        public $uniqueOSDevices;
+        public $uniqueDevices;
     }
     class UpdateReport
     {
         public $firstDate;
         public $lastDate;
         public $totalChecks;
-        public $uniqueClients;
+        public $uniqueDevices;
         public $topApps = array();
         public $topDevices = array();
         public $topOSVersions = array();
@@ -112,8 +112,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
                 /* Clients */
                 $clientid = $lineParts[4];     //last column is the client identifier
-                if (!in_array($clientid, $uniqueClients)) {
-                    array_push($uniqueClients, $clientid);
+                if (!in_array($clientid, $uniqueDevices)) {
+                    array_push($uniqueDevices, $clientid);
                 }
                 //accumulate (or start) the client count for this app
                 if (!array_key_exists($appId, $clients)) {
@@ -165,12 +165,12 @@ function returnUpdateDataFormatted($config, $mimeType) {
                     $osVersions[$osVersion] += 1;
                 }
                 //accumulate unique device account by os name
-                if (!array_key_exists($osVersion, $uniqueOSDevices)){
-                    $uniqueOSDevices[$osVersion] = array($clientid);
+                if (!array_key_exists($osVersion, $uniqueDevices)){
+                    $uniqueDevices[$osVersion] = array($clientid);
                 }
                 else{
-                    if (!in_array($clientid, $uniqueOSDevices[$osVersion]))
-                        array_push($uniqueOSDevices[$osVersion], $clientid);
+                    if (!in_array($clientid, $uniqueDevices[$osVersion]))
+                        array_push($uniqueDevices[$osVersion], $clientid);
                 }
             }
         }
@@ -189,7 +189,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
             $appId = str_replace(" ", "", $key);
             $thisApp->appVersions = $appVersions[$appId];
             $thisApp->count = $val;
-            $thisApp->uniqueClients = count($clients[$appId]);
+            $thisApp->uniqueDevices = count($clients[$appId]);
             $updateReport->topApps[$i] = $thisApp;
             $i++;
         } else {
@@ -219,8 +219,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
             $thisOS = new OSVersion();
             $thisOS->osVersionString = $key;
             $thisOS->count = $val;
-            $thisOS->uniqueOSDevices = count($uniqueOSDevices[$key]);
-            $thisOS->uniqueOSDeviceList = $uniqueOSDevices[$key];
+            $thisOS->uniqueDevices = count($uniqueDevices[$key]);
+            $thisOS->uniqueOSDeviceList = $uniqueDevices[$key];
             $updateReport->topOSVersions[$i] = $thisOS;
             $i++;
         } else {
@@ -230,8 +230,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $updateReport->firstDate = $startDate;
     $updateReport->lastDate = $lastDate;
     $updateReport->totalChecks = $count;
-    $updateReport->uniqueClients = count($uniqueClients);
-    $updateReport->uniqueClientDetails = $uniqueClients;
+    $updateReport->uniqueDevices = count($uniqueDevices);
+    $updateReport->uniqueClientDetails = $uniqueDevices;
 
     //return report object as JSON
     header("Content-Type: " . $mimeType);

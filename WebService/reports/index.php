@@ -55,12 +55,14 @@ $mimeType = "text/html";
 
     <script>
     var updateLabels = [];
-    var updateData = [];
+    var updateTotals = [];
+    var updateUniques = [];
     for (let key in updateReport.topApps) {
         if (updateReport.topApps.hasOwnProperty(key)) {
             console.log(key, updateReport.topApps[key]);
             updateLabels.push(updateReport.topApps[key].appName);
-            updateData.push(updateReport.topApps[key].count);
+            updateTotals.push(updateReport.topApps[key].count);
+            updateUniques.push(updateReport.topApps[key].uniqueDevices);
         }
     }
     var ctx = document.getElementById('usageChart');
@@ -81,7 +83,12 @@ $mimeType = "text/html";
         data: {
         labels: updateLabels,
         datasets: [{ 
-            data: updateData,
+            data: updateTotals,
+            backgroundColor: Object.values(CHART_COLORS),
+            fill: true,
+            },
+            { 
+            data: updateUniques,
             backgroundColor: Object.values(CHART_COLORS),
             fill: true,
             }]
@@ -91,12 +98,14 @@ $mimeType = "text/html";
 
     <script>
     var deviceLabels = [];
-    var deviceData = [];
+    var deviceTotals = [];
+    var deviceUniques = [];
     for (let key in updateReport.topDevices) {
         if (updateReport.topDevices.hasOwnProperty(key)) {
             console.log(key, updateReport.topDevices[key]);
             deviceLabels.push(updateReport.topDevices[key].deviceString);
-            deviceData.push(updateReport.topDevices[key].count);
+            deviceTotals.push(updateReport.topDevices[key].count);
+            deviceUniques.push(updateReport.topDevices[key].uniqueDevices);
         }
     }
     var ctx = document.getElementById('deviceChart');
@@ -117,7 +126,12 @@ $mimeType = "text/html";
         data: {
         labels: deviceLabels,
         datasets: [{ 
-            data: deviceData,
+            data: deviceTotals,
+            backgroundColor: Object.values(CHART_COLORS),
+            fill: true,
+            },
+            { 
+            data: deviceUniques,
             backgroundColor: Object.values(CHART_COLORS),
             fill: true,
             }]
@@ -127,12 +141,14 @@ $mimeType = "text/html";
 
     <script>
     var osLabels = [];
-    var osData = [];
+    var osTotals = [];
+    var osUniques = [];
     for (let key in updateReport.topOSVersions) {
         if (updateReport.topOSVersions.hasOwnProperty(key)) {
             console.log(key, updateReport.topOSVersions[key]);
             osLabels.push(updateReport.topOSVersions[key].osVersionString);
-            osData.push(updateReport.topOSVersions[key].count);
+            osTotals.push(updateReport.topOSVersions[key].count);
+            osUniques.push(updateReport.topOSVersions[key].uniqueDevices);
         }
     }
     var ctx = document.getElementById('osChart');
@@ -153,7 +169,12 @@ $mimeType = "text/html";
         data: {
         labels: osLabels,
         datasets: [{ 
-            data: osData,
+            data: osTotals,
+            backgroundColor: Object.values(CHART_COLORS),
+            fill: true,
+            },
+            { 
+            data: osUniques,
             backgroundColor: Object.values(CHART_COLORS),
             fill: true,
             }]

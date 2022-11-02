@@ -5,7 +5,7 @@ html, body, div, h1, h2 {
 .sectiontitle {
     text-align:center;
     font-size: 24px;
-    margin-top:10px; 
+    margin-top:18px; 
     margin-bottom: 18px;
 }
 
@@ -27,6 +27,7 @@ width: 38%;
 }
 
 #stats {
+    text-align: center;
     font-size: smaller;
     color: dimgray;
     width: 20% !important;

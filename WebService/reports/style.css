@@ -1,0 +1,43 @@
+html, body, div, h1, h2 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+}
+
+.column {
+float: left;
+width: 33.33%;
+}
+
+.halfcolumn {
+float: left;
+width: 38%;
+}
+
+#stats {
+    font-size: smaller;
+    color: dimgray;
+    width: 20% !important;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+    .column {
+    width: 100%;
+    font-size: 12px;
+    }
+
+    .halfcolumn {
+    width: 100%;
+    font-size: 12px;
+    }
+    
+    #stats {
+    width: 100% !important;
+    font-size: 12px;
+    }
+}

@@ -17,12 +17,13 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $data = fopen('../logs/updatecheck.log', 'r');
     //error_reporting(E_ERROR | E_PARSE);
 
-    $topAppCount = 10;
+    $topAppCount = 20;
     $topDeviceCount = 10;
     $count = 0;
     $startDate = "";
     $lastDate = "";
     $apps = array();
+    $excluded = array("family chat");
     $appVersions = array();
     $devices = array();
     $uniqueDevices = array();
@@ -83,95 +84,100 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 $appName = $lineParts[2];     //first non-date column is the app name
                 $appParts = explode("/", $appName);
                 $appName = $appParts[0];
-                $appId = str_replace(" ", "", $appName);
-                if (!array_key_exists($appName, $apps)) {
-                    $apps[$appName] = 1;
-                } else {
-                    $apps[$appName] += 1;
-                }
-                if (count($appParts) > 1) {
-                    $appVersion = $appParts[1];
-                    //accumulate (or start) the count for this app version
-                    if (!array_key_exists($appId, $appVersions)) {
-                        $appVersions[$appId] = array();
+                if ($appName == "appmuseum.museumapp")  //handle alternate name
+                    $appName = "app museum 2";
+
+                if (!in_array($appName, $excluded)) {   //leave out private apps
+                    $appId = str_replace(" ", "", $appName);
+                    if (!array_key_exists($appName, $apps)) {
+                        $apps[$appName] = 1;
+                    } else {
+                        $apps[$appName] += 1;
                     }
-                    $found = false;
-                    foreach ($appVersions[$appId] as $key => $val) {
-                        if ($val->versionName == $appVersion) {
-                            //accumulate and break
-                            $appVersions[$appId][$key]->count++;
-                            $found = true;
-                            break;
+                    if (count($appParts) > 1) {
+                        $appVersion = $appParts[1];
+                        //accumulate (or start) the count for this app version
+                        if (!array_key_exists($appId, $appVersions)) {
+                            $appVersions[$appId] = array();
+                        }
+                        $found = false;
+                        foreach ($appVersions[$appId] as $key => $val) {
+                            if ($val->versionName == $appVersion) {
+                                //accumulate and break
+                                $appVersions[$appId][$key]->count++;
+                                $found = true;
+                                break;
+                            }
+                        }
+                        if (!$found) {           
+                            $thisVersion = new AppVersion();
+                            $thisVersion->versionName = $appVersion;
+                            $thisVersion->count = 1;
+                            array_push($appVersions[$appId], $thisVersion);
                         }
                     }
-                    if (!$found) {           
-                        $thisVersion = new AppVersion();
-                        $thisVersion->versionName = $appVersion;
-                        $thisVersion->count = 1;
-                        array_push($appVersions[$appId], $thisVersion);
-                    }
-                }
 
-                /* Clients */
-                $clientid = $lineParts[4];     //last column is the client identifier
-                if (!in_array($clientid, $uniqueDevices)) {
-                    array_push($uniqueDevices, $clientid);
-                }
-                //accumulate (or start) the client count for this app
-                if (!array_key_exists($appId, $clients)) {
-                    $clients[$appId] = array();
-                }    
-                if (!in_array($clientid, $clients[$appId])) {
-                    array_push($clients[$appId], $clientid);
-                }
-                
-                /* Devices */
-                if (strpos($line, "Mozilla/5.0") !== false) {
-                    $deviceString = extractMozillaDeviceInfo($line);
-                } else {
-                    $deviceString = $lineParts[3];
-                }
-                
-                $deviceString = explode("/", $deviceString);
-                $deviceName = $deviceString[0];
-                if ($deviceName == "Prē" ) { // Pre2 lies
-                    if (array_key_exists(2, $deviceString)) {
-                        $carrier = $deviceString[2];
-                        if ($carrier == "Verizon") {
-                            $deviceName = "Pre2";
+                    /* Clients */
+                    $clientid = $lineParts[4];     //last column is the client identifier
+                    if (!in_array($clientid, $uniqueDevices)) {
+                        array_push($uniqueDevices, $clientid);
+                    }
+                    //accumulate (or start) the client count for this app
+                    if (!array_key_exists($appId, $clients)) {
+                        $clients[$appId] = array();
+                    }    
+                    if (!in_array($clientid, $clients[$appId])) {
+                        array_push($clients[$appId], $clientid);
+                    }
+                    
+                    /* Devices */
+                    if (strpos($line, "Mozilla/5.0") !== false) {
+                        $deviceString = extractMozillaDeviceInfo($line);
+                    } else {
+                        $deviceString = $lineParts[3];
+                    }
+                    
+                    $deviceString = explode("/", $deviceString);
+                    $deviceName = $deviceString[0];
+                    if ($deviceName == "Prē" ) { // Pre2 lies
+                        if (array_key_exists(2, $deviceString)) {
+                            $carrier = $deviceString[2];
+                            if ($carrier == "Verizon") {
+                                $deviceName = "Pre2";
+                            }
                         }
                     }
-                }
-                //accumulate (or start) the count for this device
-                if (!array_key_exists($deviceName, $devices)) {
-                    $devices[$deviceName] = 1;
-                } else {
-                    $devices[$deviceName] += 1;
-                }
-                //accumulate unique device count by device name
-                if (!array_key_exists($deviceName, $uniqueDevices)){
-                    $uniqueDevices[$deviceName] = array($clientid);
-                }
-                else{
-                    if (!in_array($clientid, $uniqueDevices[$deviceName]))
-                        array_push($uniqueDevices[$deviceName], $clientid);
-                }
+                    //accumulate (or start) the count for this device
+                    if (!array_key_exists($deviceName, $devices)) {
+                        $devices[$deviceName] = 1;
+                    } else {
+                        $devices[$deviceName] += 1;
+                    }
+                    //accumulate unique device count by device name
+                    if (!array_key_exists($deviceName, $uniqueDevices)){
+                        $uniqueDevices[$deviceName] = array($clientid);
+                    }
+                    else{
+                        if (!in_array($clientid, $uniqueDevices[$deviceName]))
+                            array_push($uniqueDevices[$deviceName], $clientid);
+                    }
 
-                /* OS Version */
-                $osVersion = $deviceString[1];   
-                //accumulate (or start) the count for this device version
-                if (!array_key_exists($osVersion, $osVersions)) {
-                    $osVersions[$osVersion] = 1;
-                } else {
-                    $osVersions[$osVersion] += 1;
-                }
-                //accumulate unique device account by os name
-                if (!array_key_exists($osVersion, $uniqueDevices)){
-                    $uniqueDevices[$osVersion] = array($clientid);
-                }
-                else{
-                    if (is_array($uniqueDevices[$osVersion]) && !in_array($clientid, $uniqueDevices[$osVersion]))
-                        array_push($uniqueDevices[$osVersion], $clientid);
+                    /* OS Version */
+                    $osVersion = $deviceString[1];   
+                    //accumulate (or start) the count for this device version
+                    if (!array_key_exists($osVersion, $osVersions)) {
+                        $osVersions[$osVersion] = 1;
+                    } else {
+                        $osVersions[$osVersion] += 1;
+                    }
+                    //accumulate unique device account by os name
+                    if (!array_key_exists($osVersion, $uniqueDevices)){
+                        $uniqueDevices[$osVersion] = array($clientid);
+                    }
+                    else{
+                        if (is_array($uniqueDevices[$osVersion]) && !in_array($clientid, $uniqueDevices[$osVersion]))
+                            array_push($uniqueDevices[$osVersion], $clientid);
+                    }
                 }
             }
         }

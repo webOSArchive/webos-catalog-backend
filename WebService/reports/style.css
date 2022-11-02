@@ -2,6 +2,20 @@ html, body, div, h1, h2 {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
 }
 
+.sectiontitle {
+    text-align:center;
+    font-size: 24px;
+    margin-top:10px; 
+    margin-bottom: 18px;
+}
+
+.explainer {
+    text-align:center;
+    font-size: 12px;
+    margin-top:10px;
+    color:dimgray;
+}
+
 .column {
 float: left;
 width: 33.33%;

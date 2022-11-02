@@ -16,18 +16,19 @@ $mimeType = "text/html";
         </script>
     </head>
     <body onload="renderReports()">
-        <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Download Data</div>
+        <?php include('../../menu.php'); ?>
+        <div class="sectiontitle">Download Data</div>
         <div class="row">
             <div class="column" id="stats"><h2>Overall Stats</h2></div>    
             <div class="halfcolumn" style="margin-right: 20px;"><canvas id="appsChart"></canvas></div>
             <div class="halfcolumn"><canvas id="downloaderChart"></canvas></div>
         </div> 
-        <div style="text-align:center;font-size: 24px;margin-top:10px; margin-bottom: 18px;">Updater Activity Data</div>
+        <div class="sectiontitle">Updater Activity Data</div>
         <div class="row">
             <div class="column"><canvas id="usageChart"></canvas></div>
             <div class="column"><canvas id="deviceChart"></canvas></div>
             <div class="column"><canvas id="osChart"></div>
         </div> 
-        <div style="text-align:center;font-size: 12px;margin-top:10px;color:dimgray;">(Outer ring is Total Update Checks, Inner ring is Unique Device Update checks. As in: '# of inner ring devices have checked for updates # of outer ring times')</div>
+        <div class="explainer">(Outer ring is Total Update Checks, Inner ring is Unique Device Update checks. As in: '# of inner ring devices have checked for updates # of outer ring times')</div>
     </body>
 </html>

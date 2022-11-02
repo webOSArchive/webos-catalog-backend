@@ -128,6 +128,12 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 $deviceString = str_replace("//", "/", $deviceString);
                 $deviceString = explode("/", $deviceString);
                 $deviceName = $deviceString[0];
+                if ($deviceName == "Prē" ) { // Pre2 lies
+                    $carrier = $deviceString[2];
+                    if ($carrier == "Verizon") {
+                        $deviceName = "Pre2";
+                    }
+                }
                 //accumulate (or start) the count for this device
                 if (!array_key_exists($deviceName, $devices)) {
                     $devices[$deviceName] = 1;
@@ -144,13 +150,13 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 }
 
                 /* OS Version */
-                if ($deviceName != "Mozilla") { //  Enyo 2 behaves differently
-                    $osVersion = $deviceString[1];   
-                } 
-                else {
+                if ($deviceName == "Mozilla") { //  Enyo 2 behaves differently
                     $osVersion = $deviceString[2];
                     $osVersion = explode(";", $osVersion);
                     $osVersion = $osVersion[0];
+                }
+                else {
+                    $osVersion = $deviceString[1];   
                 }
                 //accumulate (or start) the count for this device version
                 if (!array_key_exists($osVersion, $osVersions)) {

@@ -92,7 +92,12 @@ function returnDownloadDataFormatted($config, $mimeType) {
                 if (strpos($clientstring, "iPhone;") !== false) {
                     $clientstring = "iPhone";
                 }
-                
+                if (strpos($clientstring, "app") !== false) {
+                    $clientstring = "LuneOS";
+                }
+                if (strpos($clientstring, "webos") !== false) {
+                    $clientstring = "webOS";
+                }
                 
                 //accumulate (or start) the count for this client
                 if (!array_key_exists($clientstring, $clients)) {

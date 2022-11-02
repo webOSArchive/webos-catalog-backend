@@ -69,6 +69,8 @@ function returnUpdateDataFormatted($config, $mimeType) {
     while($line = fgets($data)) {
         $line = str_replace("\n", "", $line);
         $line = stripcslashes($line);
+        $line = str_replace("//", "/", $line);
+
         if ($count > 0) {   //skip first line
             $lineParts = explode(",", $line);
             if (count($lineParts) > 3) {
@@ -124,14 +126,20 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 }
                 
                 /* Devices */
-                $deviceString = stripcslashes($lineParts[3]);     //this column is device string
-                $deviceString = str_replace("//", "/", $deviceString);
+                if (strpos($line, "Mozilla/5.0") !== false) {
+                    $deviceString = extractMozillaDeviceInfo($line);
+                } else {
+                    $deviceString = $lineParts[3];
+                }
+                
                 $deviceString = explode("/", $deviceString);
                 $deviceName = $deviceString[0];
                 if ($deviceName == "Prē" ) { // Pre2 lies
-                    $carrier = $deviceString[2];
-                    if ($carrier == "Verizon") {
-                        $deviceName = "Pre2";
+                    if (array_key_exists(2, $deviceString)) {
+                        $carrier = $deviceString[2];
+                        if ($carrier == "Verizon") {
+                            $deviceName = "Pre2";
+                        }
                     }
                 }
                 //accumulate (or start) the count for this device
@@ -150,14 +158,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 }
 
                 /* OS Version */
-                if ($deviceName == "Mozilla") { //  Enyo 2 behaves differently
-                    $osVersion = $deviceString[2];
-                    $osVersion = explode(";", $osVersion);
-                    $osVersion = $osVersion[0];
-                }
-                else {
-                    $osVersion = $deviceString[1];   
-                }
+                $osVersion = $deviceString[1];   
                 //accumulate (or start) the count for this device version
                 if (!array_key_exists($osVersion, $osVersions)) {
                     $osVersions[$osVersion] = 1;
@@ -169,7 +170,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
                     $uniqueDevices[$osVersion] = array($clientid);
                 }
                 else{
-                    if (!in_array($clientid, $uniqueDevices[$osVersion]))
+                    if (is_array($uniqueDevices[$osVersion]) && !in_array($clientid, $uniqueDevices[$osVersion]))
                         array_push($uniqueDevices[$osVersion], $clientid);
                 }
             }
@@ -182,12 +183,15 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($apps);  //sort apps descending by count
     $i = 1;
+    $appVersions = [];
     foreach ($apps as $key => $val) {
         if ($i <= $topAppCount) {
+            if (isset($appVersions[$appId]) && is_array($appVersions[$appId]))
+                $appVersions = $appVersions[$appId];
             $thisApp = new UpdateApp();
             $thisApp->appName = $key;
             $appId = str_replace(" ", "", $key);
-            $thisApp->appVersions = $appVersions[$appId];
+            $thisApp->appVersions = $appVersions;
             $thisApp->count = $val;
             $thisApp->uniqueDevices = count($clients[$appId]);
             $updateReport->topApps[$i] = $thisApp;
@@ -214,13 +218,19 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($osVersions);  //sort os versions descending by count
     $i = 1;
+    $uniqueDevices = 0;
+    $uniqueDeviceList = [];
     foreach ($osVersions as $key => $val) {
         if ($i <= $topDeviceCount) {
+            if (isset($uniqueDevices[$key]) && is_array($uniqueDevices[$key])) {
+                $uniqueDevices = count($uniqueDevices[$key]);
+                $uniqueDeviceList = $uniqueDevices[$key];
+            }
             $thisOS = new OSVersion();
             $thisOS->osVersionString = $key;
             $thisOS->count = $val;
-            $thisOS->uniqueDevices = count($uniqueDevices[$key]);
-            $thisOS->uniqueOSDeviceList = $uniqueDevices[$key];
+            $thisOS->uniqueDevices = $uniqueDevices;
+            $thisOS->uniqueOSDeviceList = $uniqueDeviceList;
             $updateReport->topOSVersions[$i] = $thisOS;
             $i++;
         } else {
@@ -230,11 +240,39 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $updateReport->firstDate = $startDate;
     $updateReport->lastDate = $lastDate;
     $updateReport->totalChecks = $count;
-    $updateReport->uniqueDevices = count($uniqueDevices);
+    $updateReport->uniqueDevices = count($uniqueDeviceList);
     $updateReport->uniqueClientDetails = $uniqueDevices;
 
     //return report object as JSON
     header("Content-Type: " . $mimeType);
     echo(json_encode($updateReport));
+}
+
+function extractMozillaDeviceInfo($line) {
+    $lineParts = explode("Mozilla/5.0 ", $line);
+
+    $device = "Browser";
+    $os = $lineParts[1];
+
+    $deviceString = $lineParts[1];
+    $deviceParts = array();
+    if (strpos($deviceString, "hpwOS"))
+        $deviceParts = explode("hpwOS/", $deviceString);
+    else
+        $deviceParts = explode("webOS/", $deviceString);
+    if (count($deviceParts) > 1) {
+        $os = $deviceParts[1];
+        $deviceParts = explode(";", $os);
+        $os = $deviceParts[0];
+        if (strpos($deviceString, "P160UNA/1.0") !== false || strpos($deviceString, "P160UEU/1.0") !== false)
+            $device = "Veer";
+        if (strpos($deviceString, "TouchPad/1.0") !== false)
+            $device = "TouchPad";
+        if (strpos($deviceString, "Pre/1.0") !== false || strpos($deviceString, "Pre/1.1") !== false)
+            $device = "Prē";
+        if (strpos($deviceString, "Pre/1.2") !== false)
+            $device = "Pre2";
+    }
+    return $device . "/" . $os;
 }
 ?>

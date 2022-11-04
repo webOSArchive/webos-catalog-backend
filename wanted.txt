@@ -1412,7 +1412,6 @@ com.appible.deephavenaudio_1.0.5_all.ipk
 myapp.pdf.deerhuntergameguide_1.0.0.ipk
 com.taytabbb.defcon_1.0.0_all.ipk
 nz.co.ironshod.defensestation_1.0.0_all.ipk
-com.8bitdevelopment.dqsbtb_1.0.2_all.ipk
 com.nanonino.delhicityguide_1.0.0_all.ipk
 com.openmerchantaccount.delicious_1.0.2_all.ipk
 com.dijit.dellyranx_2.0.3_all.ipk

@@ -40,14 +40,18 @@ function returnDownloadDataFormatted($config, $mimeType) {
     
     //get extra data
     function getDetailData($host, $myIdx) {
-        if (!isset($myIdx)) {$myIdx = $id;}
-        //Get the JSON file over HTTP to the configured server,
-        $mypath = "http://{$host}/{$myIdx}.json";
-    
-        $myfile  = fopen($mypath, "rb");
-        $content = stream_get_contents($myfile);
-        fclose($myfile);
-        return json_decode($content, true);
+        if (is_numeric($myIdx)) {
+            if (!isset($myIdx)) {$myIdx = $id;}
+            //Get the JSON file over HTTP to the configured server,
+            $mypath = "http://{$host}/{$myIdx}.json";
+        
+            $myfile  = fopen($mypath, "rb");
+            $content = stream_get_contents($myfile);
+            fclose($myfile);
+            return json_decode($content, true);
+        } else {
+            return $myIdx;
+        }
     }
     
     //get the log data

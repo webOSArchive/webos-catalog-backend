@@ -220,8 +220,6 @@ function returnUpdateDataFormatted($config, $mimeType) {
 
     arsort($osVersions);  //sort os versions descending by count
     $i = 1;
-    //$uniqueDevices = 0;
-    //$uniqueDeviceList = [];
     foreach ($osVersions as $key => $val) {
         if ($i <= $topDeviceCount) {
             if (isset($uniqueOSDevices[$key]) && is_array($uniqueOSDevices[$key])) {

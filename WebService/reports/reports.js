@@ -12,6 +12,9 @@ const CHART_COLORS = {
     lightblue: 'rgb(124,185,232)'
 };
 
+var geoReport;
+var geoRendered = false;
+
 function renderReports() {
     //Overall Stats
     var statsDiv = document.getElementById("stats");
@@ -218,4 +221,73 @@ function renderReports() {
             }]
         },
     });
+    fetchGeoData();
+}
+
+function fetchGeoData() {
+    var fetchingTxt = "<p><b>Fetching Geo Data <img src='spinner.gif' align='absmiddle'></b></p>";
+    var readyTxt = "<p><b>Geo Data:</b> <a href='javascript:showGeoData();'>Click Here</a></p>";
+    document.getElementById("stats").innerHTML += "<span id='geoShower'>" + fetchingTxt + "</span>";
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("DATA READY!");
+            document.getElementById("geoShower").innerHTML = readyTxt;
+            geoReport = JSON.parse(xhttp.responseText);
+        }
+    };
+    xhttp.open("GET", "getgeodata.php", true);
+    xhttp.send();
+}
+
+function showGeoData() {
+    if (!geoRendered) {
+        //Download Device Stats
+        var geoLabels = [];
+        var geoTotals = [];
+        for (let key in geoReport.topRegions) {
+            if (geoReport.topRegions.hasOwnProperty(key)) {
+                console.log(key, geoReport.topRegions[key]);
+                geoLabels.push(geoReport.topRegions[key].regionName);
+                geoTotals.push(geoReport.topRegions[key].count);
+            }
+        }
+        var ctx = document.getElementById('geoChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Most Common Regions'
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+            },
+            data: {
+            labels: geoLabels,
+            datasets: [{ 
+                label: 'Regions',
+                data: geoTotals,
+                backgroundColor: Object.values(CHART_COLORS),
+                fill: true,
+                }]
+            },
+        });
+        geoRendered = true;
+    }
+    openModal();
+}
+
+// Open the Modal
+function openModal() {
+    document.getElementById("geoModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+    document.getElementById("geoModal").style.display = "none";
 }

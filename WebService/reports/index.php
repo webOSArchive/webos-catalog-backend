@@ -30,5 +30,13 @@ $mimeType = "text/html";
             <div class="column"><canvas id="osChart"></div>
         </div> 
         <div class="explainer">(Outer ring is Total Update Checks, Inner ring is Unique Device Update checks. As in: '# of inner ring devices have checked for updates # of outer ring times')</div>
+    
+        <!--Pop-up Geo Report-->
+        <div id="geoModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <canvas id="geoChart">
+            </div>
+        </div>
     </body>
 </html>

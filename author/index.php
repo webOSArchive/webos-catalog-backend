@@ -96,7 +96,7 @@ $currurl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 <link rel="canonical" href="<?php echo $currurl; ?>" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="<?php echo $author_data['author']; ?> on webOS App Museum II" />
+<meta property="og:title" content="<?php echo $author_data['author']; ?>'s Apps on webOS App Museum II" />
 <meta property="og:description" content="webOS App Museum II is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />
 <meta property="og:url" content="<?php echo $currurl; ?>" />
 <meta property="og:site_name" content="webOS App Museum" />
@@ -108,7 +108,7 @@ $currurl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 <meta property="og:image:type" content="image/png" />
 <meta name="author" content="webOS Archive" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="<?php echo $author_data['author']; ?> on webOS App Museum II" />
+<meta name="twitter:title" content="<?php echo $author_data['author']; ?>'s Apps on webOS App Museum II" />
 <meta name="twitter:description" content="webOS App Museum II is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />
 <meta name="twitter:image" content="<?php echo $use_icon; ?>" />
 </head>

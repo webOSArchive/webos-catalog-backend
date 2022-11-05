@@ -18,6 +18,9 @@ if (strpos($outputObj["filename"], "://") === false) {
 } else {
   $use_uri = $outputObj["filename"];
 }
+
+//Add social media meta tags
+include('meta-social-common.php');
 ?>
 
 <title>webOS App Museum II</title>

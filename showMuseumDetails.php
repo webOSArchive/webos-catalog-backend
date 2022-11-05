@@ -93,8 +93,33 @@ if (strpos($found_app["appIconBig"], "://") === false) {
 } else {
 	$use_icon = $found_app["appIconBig"];
 }
+
+//Shorten description for social media
+$meta_desc = str_replace($app_detail["description"], "/r", "<br>");
+$meta_desc = str_replace($app_detail["description"], "/n", "<br>");
+$meta_desc = explode("<br>", $app_detail["description"]);
+$meta_desc = trim($meta_desc[0]);
 ?>
 <title><?php echo $found_app["title"] ?> - webOS App Museum II</title>
+<meta name="description" content="webOS App Museum is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />
+<link rel="canonical" href="<?php echo $share_url; ?>" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<?php echo $found_app["title"]; ?>" />
+<meta property="og:description" content="<?php echo $meta_desc; ?>" />
+<meta property="og:url" content="<?php echo $share_url; ?>" />
+<meta property="og:site_name" content="webOS App Museum" />
+<meta property="article:published_time" content="2022-05-07T15:10:11+00:00" />
+<meta property="article:modified_time" content="2022-06-28T18:18:31+00:00" />
+<meta property="og:image" content="<?php echo $use_icon; ?>" />
+<meta property="og:image:width" content="256" />
+<meta property="og:image:height" content="256" />
+<meta property="og:image:type" content="image/png" />
+<meta name="author" content="webOS Archive" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="<?php echo $found_app["title"]; ?>" />
+<meta name="twitter:description" content="<?php echo $meta_desc; ?>" />
+<meta name="twitter:image" content="<?php echo $use_icon; ?>" />
 <link rel="stylesheet" href="webmuseum.css">
 <script src="downloadHelper.php"></script>
 </head>
@@ -104,9 +129,9 @@ if (strpos($found_app["appIconBig"], "://") === false) {
 	<h2><a href="<?php echo ($homePath); ?>"><img src="assets/icon.png" style="height:64px;width:64px;margin-top:-10px;" align="middle"></a> &nbsp;<a href="<?php echo ($homePath); ?>">webOS App Museum II</a></h2>
 	<br>
 	<table border="0" style="margin-left:1.3em;">
-	<tr><td colspan="2"><h1><?php echo $found_app["title"] ?></h1></td>
+	<tr><td colspan="2"><h1><?php echo $found_app["title"]; ?></h1></td>
 		<td rowspan="2">
-		<img src="<?php echo $use_icon?>" class="appIcon" >
+		<img src="<?php echo $use_icon; ?>" class="appIcon" >
 	</td></tr>
 	<tr><td class="rowTitle">Museum ID</td><td class="rowDetail"><?php echo $found_app["id"] ?></td></tr>
 	<tr><td class="rowTitle">Application ID</td><td colspan="2" class="rowDetail"><?php echo $app_detail["publicApplicationId"] ?></td></tr>

@@ -17,13 +17,14 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $lastDate = "";
     $excluded = array("184.56.40.223");
     $geoRegions = array();
+    $ipRegions = array();
     class GeoRegion
     {
         public $regionCode;
         public $regionName;
         public $count;
     }
-    class IPRegions
+    class IPRegion
     {
         public $ip;
         public $regionCode;
@@ -57,7 +58,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 if (!in_array($IP, $excluded)) {   //leave out my IPs
                     $useCode = "??";
                     $useName = "Unknown Region";
-                    if (!array_key_exists($IP, $IPRegions)) {
+                    if (!isset($IPRegions) || !is_array($IPRegions) || !array_key_exists($IP, $IPRegions)) {
                         //ask server for region info
                         $regionData = getRegionForIP($IP);
                         if (isset($regionData)) {

@@ -89,7 +89,7 @@ $homePath = $protocol . $config["service_host"]. "";
 <link rel="stylesheet" href="<?php echo $protocol . $config["service_host"]; ?>/webmuseum.css">
 <?php
 //Social media meta
-$protocol = ((!emptyempty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";  
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";  
 $currurl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];  
 ?>
 <meta name="description" content="webOS App Museum II is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />

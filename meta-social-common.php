@@ -1,10 +1,10 @@
 <meta name="description" content="webOS App Museum II is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />
-<link rel="canonical" href="http://www.webosarchive.org" />
+<link rel="canonical" href="http://appcatalog.webosarchive.org" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="webOS App Museum II" />
 <meta property="og:description" content="webOS App Museum II is the definitive historical archive of legacy Palm/HP webOS mobile apps and games!" />
-<meta property="og:url" content="https://www.webosarchive.org" />
+<meta property="og:url" content="https://appcatalog.webosarchive.org" />
 <meta property="og:site_name" content="webOS App Museum" />
 <meta property="article:published_time" content="<?php echo date('m/d/Y H:i:s', time()); ?>" />
 <meta property="article:modified_time" content="<?php echo date('m/d/Y H:i:s', time()); ?>" />

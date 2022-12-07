@@ -60,7 +60,8 @@ if ($search_str == "0" ||	//Treat the museum itself differently
  $search_str == "app museum ii" ||
  $search_str == "appmuseum" ||
  $search_str == "appmuseum2" ||
- $search_str == "appmuseumii")
+ $search_str == "appmuseumii" ||
+ $search_str == "appmuseum.museumapp" )
 {
 	if (isset($logpath)) { $logpath = write_log_data($logpath, "app museum 2", $devicedata, $clientinfo); }
 	$found_id = "0";

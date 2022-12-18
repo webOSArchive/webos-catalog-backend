@@ -47,7 +47,7 @@ td { padding: 20px;}
     <small>
     Requires <a href="http://www.webosarchive.org/activation/org.webosinternals.preware_1.9.14_arm.ipk">Preware</a><br>
     Need <a href="http://www.webosarchive.org/docs/appstores/">help installing</a>?<br>
-    <div style="margin-top: 8px">Source available on <a href="https://www.github.com/codepoet80/webos-catalog-backend">GitHub</a></div>
+    <div style="margin-top: 8px"><a href="https://appcatalog.webosarchive.org/WebService/reports/">View Stats</a> | <a href="https://www.github.com/codepoet80/webos-catalog-backend">View Source</a></div>
     <br>
     </small>
   </div>

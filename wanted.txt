@@ -341,7 +341,6 @@ com.appible.anoldfashionedgirlaudio_1.0.0_all.ipk
 com.appible.anoldfashionedgirlaudiotext_1.0.0_all.ipk
 com.appbookshop.epub.anoverviewofsocialmedia_1.0.0_all.ipk
 com.cribme.ag_1.0.0_all.ipk
-com.cribme.aghd_1.0.5_all.ipk
 com.dblpartners.analogyace_2.0.0_all.ipk
 com.aslansky.analytics_0.9.1_all.ipk
 com.sdontu.loan_1.0.0_all.ipk
@@ -854,7 +853,6 @@ com.dijit.brunettebeauties_3.0.1_all.ipk
 com.ctladvance.brushstrokepro_0.6.21_all.ipk
 com.nanonino.brusselmetro_1.0.1_all.ipk
 com.rbtdev.bubblebeats_1.1.0_all.ipk
-com.ximad.bubbleshooter_1.0.2_all.ipk
 com.ximad.bubblebirds2_1.0.0_all.ipk
 com.ximad.tp.bubblebirds2_1.0.1_all.ipk
 com.ximad.bubblebirds2pre3_1.0.0_all.ipk
@@ -1754,7 +1752,6 @@ com.appbookshop.fairytalesbrothersgrimm_1.0.0_all.ipk
 com.kargesoftware.falle.hd.pro_1.3.481_all.ipk
 com.kargesoftware.falle.pro_1.3.481_all.ipk
 com.cannytechnologies.fallinganimals_1.0.0_all.ipk
-com.jackpot.fallingsandtp_1.0.0_all.ipk
 com.jackpot.fallingsand2_1.0.0_all.ipk
 com.appible.fameandfortuneaudio_1.0.5_all.ipk
 com.appible.fameandfortuneaudiotext_1.0.5_all.ipk
@@ -2028,7 +2025,6 @@ com.appbookshop.epub.gettoknowsanfransisco_1.0.0_all.ipk
 com.appbookshop.epub.gettoknowshowbusiness_1.0.0_all.ipk
 com.dijit.getwet_3.0.2_all.ipk
 com.appbookshop.epub.getyourexback_1.0.0_all.ipk
-com.warlord.get5_4.2.3_all.ipk
 com.mteckmobile.app.getmevino_0.5.4_all.ipk
 com.appbookshop.epub.gettingajoboverseas_1.0.0_all.ipk
 com.appbookshop.epub.afterbirthexercise_1.1.0_all.ipk
@@ -2110,7 +2106,6 @@ com.discipleskies.gpsoutbackpro_6.3.0_all.ipk
 com.mycolleague.gpstracker_6.0.0_all.ipk
 com.l337tech.gpstrippanel_1.1.3_all.ipk
 com.mycolleague.gpsultimate_6.1.0_all.ipk
-com.spyderspeak.gpsutilities_1.0.0_all.ipk
 com.merkel.vzgpswrestler_1.1.9_all.ipk
 net.bradleygraber.gpsdashboardplus_2.0.3_all.ipk
 com.speedymarks.palmpre.gradebook_1.0.3_all.ipk
@@ -2120,7 +2115,6 @@ com.quizmine.grammar_4.0.0_all.ipk
 com.quizmine.englishgrammartab_1.5.0_all.ipk
 com.tearn.kgrammar_5.1.1_all.ipk
 uk.co.hamiltonweb.grandprixbikescountdown_1.0.1_all.ipk
-com.squeakydogsoftware.graphcalchd_2.2.7_all.ipk
 com.appbookshop.epub.graphicsdesigner101_1.0.0_all.ipk
 com.willculus.ct8450_1.7.3_all.ipk
 com.hollandnumerics.howsas03_1.1.0.ipk
@@ -2629,7 +2623,6 @@ com.discipleskies.tictactoe_2.0.0_all.ipk
 com.appbookshop.kidnapped_1.0.0_all.ipk
 com.appible.kidnappedaudio_1.0.0_all.ipk
 com.appible.kidnappedaudiotext_1.0.0_all.ipk
-com.lakshmisolutions.kidsdomino_1.0.1.ipk
 com.virtualgs.kpaint_1.5.1_all.ipk
 org.coolcode.kids.poetry_1.1.0_all.ipk
 com.mathslice.kidsslate_3.0.0_all.ipk
@@ -3010,7 +3003,6 @@ com.netframes.nfivvgaiammenopause_2.2.1_all.ipk
 com.netframes.nfivvgaiamdiabetes_2.2.1_all.ipk
 com.netframes.nfivvgaiamweightloss_2.2.1_all.ipk
 com.webozapps.mazecraze_1.0.0_all.ipk
-com.shanerooni.mazehunter3d_1.0.1_all.ipk
 com.quizmine.mbaref_5.5.0_all.ipk
 com.quizmine.mbareferencetab_2.0.0_all.ipk
 com.dblpartners.mcdst_1.0.3_all.ipk
@@ -3126,7 +3118,6 @@ com.minube.ski_1.0.4_all.ipk
 com.hotsauceapps.mirrormirror_1.0.0_all.ipk
 com.vaibhavmishra.webos.entertainment.miso_0.9.3_all.ipk
 com.appible.misspimscamouflageaudio_1.0.5_all.ipk
-com.swiftuser.missiledefender.full_1.1.5_all.ipk
 com.webos-interactive.missingsearch_1.0.0_all.ipk
 com.lindicible.webos.mistermind_1.3.0_all.ipk
 com.zenappstudios.mite_1.0.5_all.ipk
@@ -3247,7 +3238,6 @@ com.copperfrog.mycostock_1.0.0_all.ipk
 com.3acorn.mycrohnsdiary_2.0.0_all.ipk
 com.jmprod.myfeeds_1.1.12_all.ipk
 com.jmprod.myfeedsfree_1.0.9_all.ipk
-com.spyderspeak.mygps_1.2.0_all.ipk
 com.3acorn.mhs_2.1.0_all.ipk
 com.3acornapps.issuestracker_1.0.0_all.ipk
 com.zenlook.mykidbaseball_1.0.0_all.ipk
@@ -3256,7 +3246,6 @@ com.virtuestudio.lamppaid_1.0.2_all.ipk
 com.mobichimp.loan_1.1.4_all.ipk
 com.vimuktitechnologiespvtltd.mymedical_1.0.0_all.ipk
 com.lukewalkerapps.mypets_1.1.9_all.ipk
-com.spyderspeak.mysafe_1.0.0_all.ipk
 com.infiniteappz.2011diary_1.0.0_all.ipk
 com.3acorn.mystandupmeeting_2.0.0_all.ipk
 com.warlord.mytimer_1.1.5_all.ipk
@@ -3589,7 +3578,6 @@ com.infiniteappz.peakflowcalculator_1.2.0_all.ipk
 com.funmobility.peanuts_1.0.0_all.ipk
 com.brighthouselabs.pearlsbuckquotes_1.1.0_all.ipk
 com.soundboardmasters.peeweehermansoundboard_1.1.3_all.ipk
-com.chrisvanhooser.peekadash_1.0.6_all.ipk
 com.jdfsoftware.pegpics_1.0.0_all.ipk
 com.pulse.pegpuzzleabc123_1.0.0_all.ipk
 com.pulse.pegpuzzle_1.0.2_all.ipk
@@ -3816,7 +3804,6 @@ com.jasoncheeks.powerpointtopdf_1.0.4_all.ipk
 com.jasoncheeks.powerpointtopdfhd_1.0.1_all.ipk
 com.designtech.powertrade_0.8.5_all.ipk
 com.livingmidnight.powfish_1.3.0_all.ipk
-com.livingmidnight.powfisht_1.3.0_all.ipk
 com.nanonino.praguecityguide_1.0.0_all.ipk
 com.nanonino.praguemetro_1.0.2_all.ipk
 org.ozeta.pranks_2.0.0_all.ipk
@@ -4236,7 +4223,6 @@ com.dblpartners.series763_1.0.3_all.ipk
 com.systemsgo.sermonnotes_1.0.3_all.ipk
 com.todaypda.servermonitor_1.0.0_all.ipk
 com.mobilesnack.servicaixa_2.5.12_all.ipk
-com.haui.bellplus.touchpad_2.1.0_all.ipk
 com.haui.bellplus_2.0.2_all.ipk
 com.clevermatrix.sevendaydiets_1.0.0_all.ipk
 com.nanonino.sevillametro_1.0.1_all.ipk
@@ -4361,7 +4347,6 @@ com.triactivemedia.slimmingworld_0.9.1_all.ipk
 com.emmettlollis.slimphoriatracker_1.0.0_all.ipk
 com.dseffects.smallstars_1.0.0_all.ipk
 com.neev.smaran_1.0.4_all.ipk
-com.spyderspeak.smartlist_1.0.3_all.ipk
 com.coraapps.smartvision_1.0.1_all.ipk
 com.sykhronics.smilesdrop_1.0.8_all.ipk
 com.sykhronics.smileszen_1.0.8_all.ipk
@@ -5389,7 +5374,6 @@ com.appible.tohaveandtoholdaudiotext_1.0.0_all.ipk
 com.appible.toletvoliiiaudio_1.0.5_all.ipk
 com.appible.toletvoliiiaudiotext_1.0.5_all.ipk
 com.zumobi.todayshow_1.1.0_all.ipk
-com.machiapps.todaystasksplus_1.0.4_all.ipk
 com.appbookshop.epub.todaysmostprominentpoliticians_1.0.0_all.ipk
 com.tipitap.toodlertappingzoo_1.0.6_all.ipk
 com.jlp-tech.toddlertimeout_1.2.0_all.ipk
@@ -5538,7 +5522,6 @@ com.appible.typhoonaudio_1.0.5_all.ipk
 com.appible.typhoonaudiotext_1.0.5_all.ipk
 com.ggiovann.typoz_2.0.0_all.ipk
 com.badribros.usarmysurvivalmanual_1.0.1_all.ipk
-com.spyderspeak.ubercalc_0.9.8_all.ipk
 com.discipleskies.translatethisenglishgerman_3.0.0_all.ipk
 com.storko.uciworldtour_1.0.4_all.ipk
 com.webrich.ukcardrivingtheorytest_1.0.0_all.ipk
@@ -5568,13 +5551,11 @@ com.infiniteappz.universalcalculator_2.1.0_all.ipk
 com.ericent.detector_1.1.0_all.ipk
 com.universaldoctor.speaker.fr_1.0.0_all.ipk
 com.universaldoctor.speaker.uk_1.0.0_all.ipk
-com.universaldoctor.speaker.usa_1.0.0_all.ipk
 com.jbtechnologies.timestampconversion_1.0.2_all.ipk
 com.opflo.googlemusic_1.0.0_all.ipk
 com.appible.upfromslaveryaudio_1.0.5_all.ipk
 com.appible.upfromslaveryaudiotext_1.0.5_all.ipk
 com.uplood.imagevideo_1.1.4_all.ipk
-com.norvinet.upnp_1.1.0_all.ipk
 com.middlemindgames.urbanbackgroundsfull_1.0.049_all.ipk
 com.middlemindgames.urbanbackgroundshdfull_1.0.006_all.ipk
 com.speedymarks.palmpre.url_1.0.0_all.ipk
@@ -5627,7 +5608,6 @@ com.brighthouselabs.vincelombardiquotes_1.2.0_all.ipk
 com.brighthouselabs.vincentvangoghquotes_1.1.0_all.ipk
 com.gldnfleece.vinimuni_0.9.1_all.ipk
 com.brighthouselabs.virgilquotes_1.1.0_all.ipk
-com.wtflolomgbbq.haxe.vct_1.0.1_all.ipk
 com.natenai.app.virtualhorseracing3d_1.2.5_all.ipk
 com.gpimports.virtualkeyboard_1.0.1_all.ipk
 de.omoco.vcg_1.0.2_all.ipk
@@ -5693,7 +5673,6 @@ com.soundboardmasters.waynesworldsoundboard_1.1.3_all.ipk
 com.gregstoll.wethepeople_1.0.2_all.ipk
 com.tearn.ktaweapons_4.8.4_all.ipk
 com.abesapps.widgetclock_0.1.1_all.ipk
-com.warlord.w21_3.4.3.ipk
 com.warlord.weatherradar_1.1.1_all.ipk
 com.discipleskies.weatherstation_3.0.0_all.ipk
 com.abesapps.weatherwidget_1.1.6_all.ipk

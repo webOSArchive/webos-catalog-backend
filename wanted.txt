@@ -1339,7 +1339,6 @@ tk.dabloosite.dabloositeconverter_0.5.0_all.ipk
 com.speedymarks.palmpre.daily_1.0.4_all.ipk
 com.thomsensoftware.dailybiblepro_1.0.0_all.ipk
 com.scriptmatic.palm.dailybibleverse_1.0.0_all.ipk
-com.ttpsoft.dailydevopro_1.0.0_all.ipk
 com.brimllc.dailydose_1.0.0_all.ipk
 com.brighthouselabs.dalnflfans_1.0.0_all.ipk
 com.brighthouselabs.dalnhlfans_1.0.0_all.ipk

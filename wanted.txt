@@ -2133,7 +2133,6 @@ com.tearn.kagpottery_5.1.1_all.ipk
 com.brighthouselabs.greekrecipes_1.0.0_all.ipk
 com.tearn.kagreek_5.1.1_all.ipk
 com.brighthouselabs.gnbnflfans_1.0.0_all.ipk
-com.oceanhousemedia.bookgreeneggsandham_1.0.0_all.ipk
 com.appbookshop.epub.greenteaandweightloss_1.1.0_all.ipk
 com.appible.greenerthanyouthinkaudio_1.0.0_all.ipk
 com.appible.greenerthanyouthinkaudiotext_1.0.0_all.ipk

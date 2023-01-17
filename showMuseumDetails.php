@@ -1,3 +1,4 @@
+<?php include('tldchange-notice.php'); ?>
 <html>
 <head>
 <link rel="shortcut icon" href="favicon.ico">

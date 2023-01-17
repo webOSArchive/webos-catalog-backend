@@ -1,16 +1,4 @@
-<?php
-if (strpos($_SERVER['HTTP_HOST'], "webosarchive.com") !== false) {
-    $url = "http://"; 
-    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
-         $url = "https://";
-    $url.= str_replace("webosarchive.com", "webosarchive.org", $_SERVER['HTTP_HOST']);
-    $url.= $_SERVER['REQUEST_URI'];
-    if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] != "")
-      $url.="?".$_SERVER['QUERY_STRING'] ;
-  header("Location: .$url);
-  die();
-}
-?>
+<?php include('tldchange-notice.php'); ?>
 <html>
 <head>
 <link rel="shortcut icon" href="favicon.ico">

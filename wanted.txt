@@ -2589,7 +2589,6 @@ com.scrollmotion.kafkacomestoamericafightingfor-9781590514559-rh_0.9.903_all.ipk
 com.brighthouselabs.kahlilgibranquotes_1.1.0_all.ipk
 com.dijit.kailayu_2.0.5_all.ipk
 com.jasoncheeks.kalasamtamilradio_1.0.4_all.ipk
-com.kalemsoft.ksmplayerpre3_0.3.5_all.ipk
 es.no2.kamasutramahjong_1.0.2_all.ipk
 com.pawprintgames.kamiretro_1.0.1_all.ipk
 gargoylez.kanateacher.std_1.2.0_all.ipk

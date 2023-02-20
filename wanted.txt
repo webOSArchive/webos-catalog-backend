@@ -710,7 +710,6 @@ com.appbookshop.biotopeaquarium_1.0.0_all.ipk
 com.clevermatrix.birdidentifier_1.0.0_all.ipk
 com.galeforcemobile.birds_1.0.0_all.ipk
 com.nanonino.birds_1.0.0_all.ipk
-com.clevermatrix.birdsofbritain_1.0.2_all.ipk
 co.uk.leedjones.birdwatch_1.0.1_all.ipk
 com.brighthouselabs.ast1soccerfans_1.0.0_all.ipk
 com.brighthouselabs.bir1soccerfans_1.0.0_all.ipk
@@ -904,7 +903,6 @@ com.rmxapps.cabbie_1.0.5_all.ipk
 com.nanonino.cairometro_1.0.0_all.ipk
 com.brighthouselabs.cajunrecipes_1.0.0_all.ipk
 com.webilesystems.calcessentials_1.2.0_all.ipk
-com.webilesystems.calcessentialslite_1.2.0_all.ipk
 com.jasoncheeks.calctopdf_1.0.1_all.ipk
 com.jasoncheeks.calctopdfhd_1.0.0_all.ipk
 com.francisholtken.calculateur_0.9.5_all.ipk
@@ -955,10 +953,8 @@ com.rzsystems.capturesuite_1.3.3_all.ipk
 com.appbookshop.epub.caraudiothebasics_1.0.0_all.ipk
 com.pjnation.carloanestimator_1.0.2_all.ipk
 com.sidetop.carsforkids_1.2.0_all.ipk
-enigmartins5_1.0.0_all.ipk
 ajgfwebosprojects.cardtrick_1.5.0_all.ipk
 com.handmark.mpp.stlcardinals2011_2.0700.25241_all.ipk
-com.intellectdimensions.medicalccardialogy_1.0.0_all.ipk
 com.intellectdimensions.medicalccardialogy_1.0.0_all.ipk
 com.appbookshop.epub.careandenvironmentofkoi_1.0.0_all.ipk
 com.7p-group.carfinder_1.0.1_all.ipk
@@ -1063,7 +1059,6 @@ com.cannytechnologies.chondromalaciapatella_1.0.0_all.ipk
 com.cannytech.chondromalicapattelafortouchpad_1.0.0_all.ipk
 com.appbookshop.epub.choosethatperfectcorporategift_1.1.0_all.ipk
 com.appbookshop.epub.choosingtherightgolfclubs_1.0.0_all.ipk
-com.chrisvanhooser.choretrackerpro_1.0.6_all.ipk
 com.appbookshop.chowchowsrevealed_1.0.0_all.ipk
 com.supremeapps.chrisfarleysoundboardpro_1.4.0_all.ipk
 com.soundboardmasters.chrisfarleysoundboard_1.1.3_all.ipk
@@ -2250,7 +2245,6 @@ com.middlemindgames.hiphopbackgroundsfull_1.0.049_all.ipk
 com.middlemindgames.hiphopbackgroundshdfull_1.0.006_all.ipk
 com.northlightgames.hippoquest_1.1.0_all.ipk
 net.palmdoc.hippocrates_1.0.0_all.ipk
-net.palmdoc.hippocrates_1.0.0_all.ipk
 com.lemonsanver.hwc-hd_1.0.1_all.ipk
 com.appbookshop.hislastbow_1.0.0_all.ipk
 com.brighthouselabs.historicalquotes_1.1.0_all.ipk
@@ -2815,7 +2809,6 @@ com.sfosystems.loancalc_0.9.0_all.ipk
 com.mikagika.loancruncher_1.1.00_all.ipk
 com.discipleskies.locdiscovery_1.0.5_all.ipk
 com.tbadri.localevent_1.0.0_all.ipk
-com.thomsonlocal.app.localsearch_1.0.0_all.ipk
 com.mycompany.launch_1.0.0_all.ipk
 com.clearwatersoftware.lockitize_1.0.0_all.ipk
 com.brighthouselabs.loganpearsallsmithquotes_1.1.0_all.ipk
@@ -3424,7 +3417,6 @@ com.tbabiesgames.farmanimalsforallbabies_1.0.0_all.ipk
 com.bobc.o_1.0.4_all.ipk
 llc.infews.oclock_1.3.0_all.ipk
 de.r11gs.otwoverbrauch_1.0.1_all.ipk
-llc.infews.oclock_1.3.0_all.ipk
 com.brighthouselabs.oakmlbfans_1.0.0_all.ipk
 com.brighthouselabs.oaknflfans_1.0.0_all.ipk
 com.followinstinct.obassistant_1.5.0_all.ipk
@@ -3471,7 +3463,6 @@ com.appbookshop.onlinepoker_1.1.0_all.ipk
 com.akicode.oomph_1.0.1_all.ipk
 com.jasoncheeks.openofficetopdf_1.0.1_all.ipk
 com.jasoncheeks.openofficetopdfhd_1.0.0_all.ipk
-com.palm.app.opentable_0.9.19_all.ipk
 com.appible.operationterroraudio_1.0.0_all.ipk
 com.appible.operationterroraudiotext_1.0.0_all.ipk
 com.appible.opheliatheroseofelsinoreaudio_1.0.0_all.ipk
@@ -3759,7 +3750,6 @@ com.brighthouselabs.politicalquotes_1.1.0_all.ipk
 com.amazing.politics_1.1.0_all.ipk
 com.rapidrabbit.pomodoro_1.0.1.ipk
 com.smallpondapps.app.pondnotes_0.2.4_all.ipk
-com.doin.pongpremium_2.2.4_all.ipk
 com.8bitdevelopment.pongclockhd_1.0.2_all.ipk
 com.tengriprod.ponybowlingforkids_2.0.0_all.ipk
 com.tengriprod.ponyforkids_1.0.0_all.ipk
@@ -5453,7 +5443,6 @@ com.cannytech.trapballs_1.0.0_all.ipk
 com.cannytechnologies.snakeandfrogs_1.0.0_all.ipk
 com.cannytechnologies.trapballs_1.0.0_all.ipk
 com.cannytech.traporjump_1.0.1_all.ipk
-com.virtuestudio.travelalbum_1.0.1_all.ipk
 com.virtuestudio.travelalbum_1.0.1_all.ipk
 de.eding.travelcost.pro_1.4.5_all.ipk
 de.eding.travelcostpro_2.1.0.ipk

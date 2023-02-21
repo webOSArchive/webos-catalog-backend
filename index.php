@@ -62,7 +62,7 @@ td { padding: 20px;}
     <p><a href="showMuseum.php">Browse catalog online</a></p>
     <p><a href="https://github.com/h8pewou/legacy-webos-feeds/blob/main/README.md#wosa-feed">Add feed to Preware</a></p>
     <p><a href="https://archive.org/details/webOSAppCatalogArchive-Complete">Full archive from archive.org</a><br/>
-    <small><i>36.9 GB: 3829 apps cataloged, 1946 un-cataloged</i></small></p>
+    <small><i>36.9 GB: 3829 apps cataloged, 1339 un-cataloged</i></small></p>
   </div>
 </div>
 

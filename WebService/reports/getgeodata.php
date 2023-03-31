@@ -62,7 +62,6 @@ function returnUpdateDataFormatted($config, $mimeType) {
                         //ask server for region info
                         $regionData = getRegionForIP($IP);
                         if (isset($regionData)) {
-                            error_log("here!");
                             $regionObj = json_decode($regionData);
                             if (is_object($regionObj)) {
                                 $useCode = $regionObj->country->iso_code;

@@ -10,7 +10,7 @@ returnDownloadDataFormatted($config, $mimeType);
 
 function returnDownloadDataFormatted($config, $mimeType) {
     $data = fopen('../logs/downloadcount.log', 'r');
-    
+
     $topAppCount = 20;
     $topClientCount = 10;
     $count = 0;
@@ -37,14 +37,13 @@ function returnDownloadDataFormatted($config, $mimeType) {
         public $topApps = array();
         public $topClients = array();
     }
-    
+
     //get extra data
     function getDetailData($host, $myIdx) {
         if (is_numeric($myIdx)) {
             if (!isset($myIdx)) {$myIdx = $id;}
             //Get the JSON file over HTTP to the configured server,
             $mypath = "http://{$host}/{$myIdx}.json";
-        
             $myfile  = fopen($mypath, "rb");
             $content = stream_get_contents($myfile);
             fclose($myfile);
@@ -53,7 +52,7 @@ function returnDownloadDataFormatted($config, $mimeType) {
             return $myIdx;
         }
     }
-    
+
     //get the log data
     while($line = fgets($data)) {
         $line = str_replace("\n", "", $line);
@@ -64,15 +63,17 @@ function returnDownloadDataFormatted($config, $mimeType) {
                     $startDate = $lineParts[0];
                 }
                 $lastDate = $lineParts[0];  //every subsequent item has the latest date (so far)
-                
+
                 //accumulate (or start) the count for this app
                 $appid = $lineParts[1];     //first non-date column is the app id
-                if (!array_key_exists($appid, $apps)) {
-                    $apps[$appid] = 1;
-                } else {
-                    $apps[$appid] += 1;
+                if ($appid != ".env") {
+                        if (!array_key_exists($appid, $apps)) {
+                            $apps[$appid] = 1;
+                        } else {
+                            $apps[$appid] += 1;
+                        }
                 }
-    
+
                 $clientstring = $lineParts[2];     //last column is client data
                 if (strpos($clientstring, "Windows NT 10.0") !== false) {
                     $clientstring = "Windows 10";
@@ -104,7 +105,7 @@ function returnDownloadDataFormatted($config, $mimeType) {
                 if (strpos($clientstring, "webos") !== false) {
                     $clientstring = "webOS";
                 }
-                
+
                 //accumulate (or start) the count for this client
                 if (!array_key_exists($clientstring, $clients)) {
                     $clients[$clientstring] = 1;
@@ -115,10 +116,10 @@ function returnDownloadDataFormatted($config, $mimeType) {
         }
         $count++;
     }
-    
+
     //format report object, with extra data
     $downloadReport = new DownloadReport();
-    
+
     arsort($apps);  //sort apps descending by count
     $i = 1;
     foreach ($apps as $key => $val) {
@@ -135,7 +136,7 @@ function returnDownloadDataFormatted($config, $mimeType) {
             break;
         }
     }
-    
+
     arsort($clients);  //sort clients descending by count
     $i = 1;
     foreach ($clients as $key => $val) {
@@ -152,7 +153,7 @@ function returnDownloadDataFormatted($config, $mimeType) {
     $downloadReport->firstDate = $startDate;
     $downloadReport->lastDate = $lastDate;
     $downloadReport->totalDownloads = $count;
-    
+
     header("Content-Type: " . $mimeType);
     echo(json_encode($downloadReport));
 }

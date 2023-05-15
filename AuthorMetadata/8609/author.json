@@ -3,8 +3,8 @@
     "author": "Hominid Software",
     "summary": "Find apps, and learn more about Hominid Software at his website: hominidsoftware.com",
     "favicon": "favicon.ico",
-    "icon": "icon.jpg",
-    "iconBig": "iconBig.png",
+    "icon": "icon.png",
+    "iconBig": "iconBig.jpg",
     "sponsorMessage": "Add my Preware feed to get access to my apps",
     "sponsorLink": " https://hominidsoftware.com/preware/Packages",
     "socialLinks": [

@@ -9,7 +9,6 @@
 - com.timeinc.digimag.webos.time_1.0.34_all.ipk
 - com.ttpsoft.dailydevopro_1.0.1_all.ipk
 - com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
-- com.wtfware.tedoff_1.0.0_all.ipk
 
 ### Added Newly Submitted IPKs
 - nl.banneret.networkscanner_0.5_all.ipk

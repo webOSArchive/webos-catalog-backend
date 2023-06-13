@@ -5,9 +5,7 @@
 - com.appbookshop.americanfairytales_1.0.0_all.ipk
 - com.blakeshome.mousepad_1.1.0_all.ipk
 - com.fridayapps.sharkpunch_1.0.0_all.ipk
-- com.handmark.mpp.acs_2.0702.27380_all.ipk
 - com.timeinc.digimag.webos.time_1.0.34_all.ipk
-- com.ttpsoft.dailydevopro_1.0.1_all.ipk
 - com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
 
 ### Added Newly Submitted IPKs
@@ -17,6 +15,7 @@
 ### Added Updated IPKs
 - com.othelloventures.feedspider2_2.3.2_all.ipk
 - com.palm.app.jonandnic.simplechat_1.8.5_all.ipk
+- com.ttpsoft.dailydevopro_1.0.1_all.ipk
 
 ## 2023-02-20
 ### Added Discovered IPKs

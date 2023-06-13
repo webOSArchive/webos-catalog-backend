@@ -310,7 +310,6 @@ com.cyber-dynamix.amazon_1.0.0_all.ipk
 com.jukeboxfever.ambientdubtones_1.0.0_all.ipk
 com.vilaltaventures.numberpuzzle_1.0.7_all.ipk
 com.vilaltaventures.shapepuzzle_1.0.0_all.ipk
-com.appbookshop.americanfairytales_1.0.0_all.ipk
 com.badribros.americanflag_1.0.0_all.ipk
 com.clipboard.americanfootball_1.1.0_all.ipk
 com.handmark.mpp.ahj_2.0700.13898-rc.ipk
@@ -3173,7 +3172,6 @@ com.tearn.kvmotor101_5.1.1_all.ipk
 motorcycletheorytest_1.0.0_all.ipk
 com.alexk123.jimdo.motorshow08_1.0.0_all.ipk
 com.appbookshop.epub.mountainbikinghandbook_1.0.0_all.ipk
-com.blakeshome.mousepad_1.1.0_all.ipk
 com.dijit.moviemania_3.0.2_all.ipk
 com.tbadri.movienight_1.0.0_all.ipk
 com.brighthouselabs.movietimes_1.0.0_all.ipk
@@ -4237,7 +4235,6 @@ com.nanonino.shanghaimetro_1.0.0_all.ipk
 com.ovlite.shapes_0.3.4_all.ipk
 com.digitalpowers.shapesorter_2.0.0_all.ipk
 de.metaviewsoft.shareem_1.0.0_all.ipk
-com.fridayapps.sharkpunch_1.0.0_all.ipk
 com.appbookshop.she_1.0.0_all.ipk
 com.brighthouselabs.shu2soccerfans_1.0.0_all.ipk
 com.brighthouselabs.shw2soccerfans_1.0.0_all.ipk
@@ -5341,7 +5338,6 @@ com.jakyl.tilestormpolexhd_1.2.1_all.ipk
 com.flashmedia.tiltflash_1.0.4_all.ipk
 com.orgorganization.app.timein_1.0.0_all.ipk
 com.wpsee.hours_0.6.0_all.ipk
-com.timeinc.digimag.webos.time_1.0.34_all.ipk
 com.appbookshop.epub.timeshareinvestmentsbook_1.0.0_all.ipk
 com.lunaapps.tt_1.0.3_all.ipk
 com.merkel.timeuntilclean_1.0.1_all.ipk

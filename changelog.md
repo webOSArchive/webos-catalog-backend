@@ -74,3 +74,21 @@
 - com.ximad.bubbleshooter_1.0.2_all.ipk
 - de.metaviewsoft.maptool_4.7.0_all.ipk
 - de.metaviewsoft.maptoolpro_4.7.0_all.ipk
+
+## 2023-TBD
+### Renamed App
+- Renamed com.othelloventures.feedspider2 to FeedSpider 2
+
+### Added Updated IPKs
+- com.jonandnic.checkmate_1.2.6_all.ipk
+- com.palm.webos.sharespace_1.0.5_all.ipk
+- com.webosarchive.checkmatehd_1.1.1_all.ipk
+- com.palm.app.jonandnic.simplechat_1.8.5_all.ipk
+- com.ttpsoft.dailydevopro_1.0.1_all.ipk
+
+### Added New IPK
+- com.palm.webosarchive.wrp-browser_1.0.0_all.ipk
+
+### Added Discovered IPKs
+- com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
+- MORE TBD...

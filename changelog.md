@@ -1,5 +1,39 @@
 # Change Log
 
+## 2023-09-04
+### Renamed App
+- Renamed com.othelloventures.feedspider2 to FeedSpider 2
+
+### Added Updated IPKs
+- com.jonandnic.checkmate_1.2.6_all.ipk
+- com.palm.webos.sharespace_1.0.5_all.ipk
+- com.webosarchive.checkmatehd_1.1.1_all.ipk
+- com.palm.app.jonandnic.simplechat_1.8.5_all.ipk
+- com.ttpsoft.dailydevopro_1.0.1_all.ipk
+
+### Added New IPK
+- com.palm.webosarchive.wrp-browser_1.0.0_all.ipk
+
+### Added Discovered IPKs
+- com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
+- com.anusen.wordmagic_1.0.4_all.ipk
+- com.appsbydel.quickqueue_1.5.3_all.ipk
+- com.britannica.kids.dinosaurs-us_1.1.1_all.ipk
+- com.britannica.kids.rainforests-us_1.1.1_all.ipk
+- com.caihongli.game.chess_1.0.0_all.ipk
+- com.ddluk.childrenspiano_2.0.0_all.ipk
+- com.diaspark.picturepuzzle_1.0.0_all.ipk
+- com.lychee.colorballshd_1.0.0_all.ipk
+- com.mycompany.usdocuments_2.0.2_all.ipk
+- com.quizmine.webprogrammingtab_1.5.0_all.ipk
+- com.rustyapps.needforfeeds_1.0.6_all.ipk
+- com.thomasschoeps.app.puzzlepaint_1.0.3_all.ipk
+- com.timeinc.digimag.webos.people_1.0.34_all.ipk
+- com.virtualgs.kpaint_1.5.1_all.ipk
+- com.ximad.constellation_1.0.2_all.ipk
+- de.meteogroup.weatherpro_1.0.1_all.ipk
+- se.jsway.orbiumhd_1.3.10_all.ipk
+
 ## 2023-06-12
 ### Added Discovered IPKs
 - com.appbookshop.americanfairytales_1.0.0_all.ipk
@@ -74,37 +108,3 @@
 - com.ximad.bubbleshooter_1.0.2_all.ipk
 - de.metaviewsoft.maptool_4.7.0_all.ipk
 - de.metaviewsoft.maptoolpro_4.7.0_all.ipk
-
-## 2023-09-04
-### Renamed App
-- Renamed com.othelloventures.feedspider2 to FeedSpider 2
-
-### Added Updated IPKs
-- com.jonandnic.checkmate_1.2.6_all.ipk
-- com.palm.webos.sharespace_1.0.5_all.ipk
-- com.webosarchive.checkmatehd_1.1.1_all.ipk
-- com.palm.app.jonandnic.simplechat_1.8.5_all.ipk
-- com.ttpsoft.dailydevopro_1.0.1_all.ipk
-
-### Added New IPK
-- com.palm.webosarchive.wrp-browser_1.0.0_all.ipk
-
-### Added Discovered IPKs
-- com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
-- com.anusen.wordmagic_1.0.4_all.ipk
-- com.appsbydel.quickqueue_1.5.3_all.ipk
-- com.britannica.kids.dinosaurs-us_1.1.1_all.ipk
-- com.britannica.kids.rainforests-us_1.1.1_all.ipk
-- com.caihongli.game.chess_1.0.0_all.ipk
-- com.ddluk.childrenspiano_2.0.0_all.ipk
-- com.diaspark.picturepuzzle_1.0.0_all.ipk
-- com.lychee.colorballshd_1.0.0_all.ipk
-- com.mycompany.usdocuments_2.0.2_all.ipk
-- com.quizmine.webprogrammingtab_1.5.0_all.ipk
-- com.rustyapps.needforfeeds_1.0.6_all.ipk
-- com.thomasschoeps.app.puzzlepaint_1.0.3_all.ipk
-- com.timeinc.digimag.webos.people_1.0.34_all.ipk
-- com.virtualgs.kpaint_1.5.1_all.ipk
-- com.ximad.constellation_1.0.2_all.ipk
-- de.meteogroup.weatherpro_1.0.1_all.ipk
-- se.jsway.orbiumhd_1.3.10_all.ipk

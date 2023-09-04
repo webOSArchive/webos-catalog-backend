@@ -314,7 +314,6 @@ com.badribros.americanflag_1.0.0_all.ipk
 com.clipboard.americanfootball_1.1.0_all.ipk
 com.handmark.mpp.ahj_2.0700.13898-rc.ipk
 com.dijit.americanhighschool_2.0.5_all.ipk
-com.mycompany.usdocuments_2.0.2_all.ipk
 com.infomarvel.istorybooks.american-history_1.0.16_all.ipk
 com.appible.americanindianfairytalesaudio_1.0.0_all.ipk
 com.soundboardmasters.americasongssoundboard_1.1.3_all.ipk
@@ -832,11 +831,9 @@ com.britannica.kids.rome-us_1.1.1_all.ipk
 com.britannica.kids.aztec-uk_1.1.1_all.ipk
 com.britannica.kids.aztec-us_1.1.1_all.ipk
 com.britannica.kids.dinosaurs-uk_1.1.1_all.ipk
-com.britannica.kids.dinosaurs-us_1.1.1_all.ipk
 com.britannica.kids.knights-uk_1.1.1_all.ipk
 com.britannica.kids.knights-us_1.1.1_all.ipk
 com.britannica.kids.rainforests-uk_1.1.1_all.ipk
-com.britannica.kids.rainforests-us_1.1.1_all.ipk
 com.britannica.kids.snakes-uk_1.1.1_all.ipk
 com.britannica.kids.snakes-us_1.1.1_all.ipk
 com.britannica.kids.solarsystem_1.1.2_all.ipk
@@ -1034,7 +1031,6 @@ com.quizmine.chemistryformulablastertab_1.0.0_all.ipk
 com.scienceapps.chemistry_1.2.0_all.ipk
 com.quizmine.chemistryref_3.0.0_all.ipk
 com.quizmine.chemistryreferencetab_1.5.0_all.ipk
-com.caihongli.game.chess_1.0.0_all.ipk
 com.fusioncreativestudios.chessforwebos_1.0.1_all.ipk
 com.cannytechnologies.chesswithmobile_1.0.0_all.ipk
 com.cannytech.mobilechess_1.0.0_all.ipk
@@ -1045,7 +1041,6 @@ com.brighthouselabs.chinflfans_1.0.0_all.ipk
 com.brighthouselabs.chinhlfans_1.0.0_all.ipk
 com.appbookshop.childsafety_1.0.0_all.ipk
 com.appbookshop.childhoodobesity_1.0.0_all.ipk
-com.ddluk.childrenspiano_2.0.0_all.ipk
 com.pjnation.chinesecheckersfortouchpad_1.2.0_all.ipk
 com.team1.cfm_1.0.0_all.ipk
 com.scrollmotion.chineseliteraturecomprisingthean-0010056-pd_0.9.904_all.ipk
@@ -1163,7 +1158,6 @@ com.cmcs.colora_4.3.5_all.ipk
 com.brighthouselabs.colmlbfans_1.0.0_all.ipk
 com.brighthouselabs.colnhlfans_1.0.0_all.ipk
 com.ideaenjin.colottery_0.7.7_all.ipk
-com.lychee.colorballshd_1.0.0_all.ipk
 com.scienceapps.colorblindnessanalyser_1.0.0.ipk
 com.virtuestudio.coloredalertnoads_1.0.0_all.ipk
 com.dseffects.coloredcats_1.0.0_all.ipk
@@ -1228,7 +1222,6 @@ com.inorbit.connectdots_1.0.0_all.ipk
 com.merkel.connectionstatus_1.0.1_all.ipk
 com.appible.conquestovertimeaudio_1.0.0_all.ipk
 com.appible.conquestovertimeaudiotext_1.0.0_all.ipk
-com.ximad.constellation_1.0.2_all.ipk
 com.constructcalcs.constructcalcsmobile_1.0.3.ipk
 com.scrollmotion.consumptionanovel-9780307375827-rhca_0.9.90_all.ipk
 com.scrollmotion.continuetopesternagandbitechur-9780307369239-rhca_0.9.90_all.ipk
@@ -2613,7 +2606,6 @@ com.discipleskies.tictactoe_2.0.0_all.ipk
 com.appbookshop.kidnapped_1.0.0_all.ipk
 com.appible.kidnappedaudio_1.0.0_all.ipk
 com.appible.kidnappedaudiotext_1.0.0_all.ipk
-com.virtualgs.kpaint_1.5.1_all.ipk
 org.coolcode.kids.poetry_1.1.0_all.ipk
 com.mathslice.kidsslate_3.0.0_all.ipk
 com.nanonino.kievmetro_1.0.1_all.ipk
@@ -3306,7 +3298,6 @@ com.ndrive.webosukireland_11.0.09_all.ipk
 com.ndrive.webosusa_11.0.09_all.ipk
 com.discipleskies.nearestatmusa_3.3.0_all.ipk
 com.discipleskies.nearestgasstationusa_3.2.0_all.ipk
-com.rustyapps.needforfeeds_1.0.6_all.ipk
 com.ea.app.nfshp.pad.eu_1.0.0_all.ipk
 com.ea.app.nfsuc.eu.de.paid_20.0.55_all.ipk
 com.ea.app.nfsuc.eu.es.paid_20.0.57_all.ipk
@@ -3468,7 +3459,6 @@ com.kandutech.opregle_2.0.0_all.ipk
 com.soundboardmasters.optimusprimesoundboard_1.1.3_all.ipk
 com.handmark.mpp.ocregister_2.0700.13651-rc.ipk
 com.fr.useradgents.warner.orangemecanique_1.1.2_all.ipk
-se.jsway.orbiumhd_1.3.10_all.ipk
 com.aplusapps.orchtuner_1.4.0_all.ipk
 com.quizmine.organicchemistrytab_1.0.0_all.ipk
 com.sven-ziegler.meorg-trial_2.0.2_all.ipk
@@ -3572,7 +3562,6 @@ com.brighthouselabs.pennsylvaniadutchrecipes_1.0.0_all.ipk
 com.sourcen.people_1.2.1_all.ipk
 net.wizardapps.longitude_1.0.4_all.ipk
 com.appible.peoplelikethataudio_1.0.5_all.ipk
-com.timeinc.digimag.webos.people_1.0.34_all.ipk
 com.appwill.peoplequotes_1.0.0_all.ipk
 com.speedymarks.palmpre.percent_1.0.1_all.ipk
 com.brighthouselabs.percybyssheshelleyquotes_1.1.0_all.ipk
@@ -3671,7 +3660,6 @@ com.chigloo.pickit_3.1.0_all.ipk
 com.laneone.pickup_1.9.0_all.ipk
 com.shanerooni.picsketcher_1.1.7_all.ipk
 com.apptechies.pictureoftheday_1.0.0_all.ipk
-com.diaspark.picturepuzzle_1.0.0_all.ipk
 com.brighthouselabs.pierrecorneillequotes_1.1.0_all.ipk
 com.gameamour.pigscanfly_1.0.6_all.ipk
 com.infiniteappz.pillidentifier_1.0.0_all.ipk
@@ -3894,7 +3882,6 @@ com.dseffects.putinplace_1.0.0_all.ipk
 com.baonproductions.puzzlefun_1.1.0_all.ipk
 com.its.puzzlekitchendeluxe_1.1.1_all.ipk
 com.explusalpha.puzzleorbs_1.5.4_all.ipk
-com.thomasschoeps.app.puzzlepaint_1.0.3_all.ipk
 com.iprice.puzzledxmas_0.001.0_all.ipk
 com.jmprod.puzzler_1.0.2_all.ipk
 com.starwind-games.puzzlervol1_1.0.0_all.ipk
@@ -3920,7 +3907,6 @@ com.ula.quickcalc_1.0.0_all.ipk
 com.mobileenclave.app.quickchanger_1.0.4_all.ipk
 net.wizardapps.quickclip_1.0.1_all.ipk
 com.ubq.quickgrader.main_1.0.0_all.ipk
-com.appsbydel.quickqueue_1.5.3_all.ipk
 com.shanerooni.quicksolve_0.8.6_all.ipk
 com.shanerooni.quickspell_0.8.6_all.ipk
 com.shanerooni.quicksuite_0.8.6_all.ipk
@@ -5660,7 +5646,6 @@ com.discipleskies.weatherstation_3.0.0_all.ipk
 com.abesapps.weatherwidget_1.1.6_all.ipk
 com.janco.weathermapsradar_1.1.1_all.ipk
 com.janco.weathermapsradarhd_1.1.2_all.ipk
-de.meteogroup.weatherpro_1.0.1_all.ipk
 com.speedymarks.palmpre.webimages_1.0.0_all.ipk
 com.speedymarks.palmpre.webmonitor_1.0.1_all.ipk
 com.speedymarks.palmpad.webmonitor_1.0.0_all.ipk
@@ -5752,7 +5737,6 @@ com.scsoftdesign.wordclock_1.0.0_all.ipk
 com.ovlite.words_0.4.14_all.ipk
 com.deepthoughtsoftware.wordhunter_1.0.12_all.ipk
 com.codeofdoom.wordjumble_0.9.62_all.ipk
-com.anusen.wordmagic_1.0.4_all.ipk
 com.turnerapps.wordpower_1.0.0_all.ipk
 com.openmerchantaccount.wordreference_1.0.1_all.ipk
 com.ovlite.scramble_0.3.8_all.ipk

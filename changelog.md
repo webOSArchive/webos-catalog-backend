@@ -75,7 +75,7 @@
 - de.metaviewsoft.maptool_4.7.0_all.ipk
 - de.metaviewsoft.maptoolpro_4.7.0_all.ipk
 
-## 2023-TBD
+## 2023-09-04
 ### Renamed App
 - Renamed com.othelloventures.feedspider2 to FeedSpider 2
 

@@ -11,9 +11,6 @@
 - com.palm.app.jonandnic.simplechat_1.8.5_all.ipk
 - com.ttpsoft.dailydevopro_1.0.1_all.ipk
 
-### Added New IPK
-- com.palm.webosarchive.wrp-browser_1.0.0_all.ipk
-
 ### Added Discovered IPKs
 - com.wordpress.touchcontrol.touchvol_0.1.5_all.ipk
 - com.anusen.wordmagic_1.0.4_all.ipk

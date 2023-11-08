@@ -46,7 +46,7 @@ td { padding: 20px;}
     <h3>Download for webOS 2.0+ Devices</h3>
     <a href="<?php echo $use_uri?>">Get Current Version: <?php echo $outputObj["version"]?></a><br><br>
     <small>
-    Requires <a href="http://www.webosarchive.org/activation/org.webosinternals.preware_1.9.14_arm.ipk">Preware</a><br>
+    Requires <a href="https://docs.webosarchive.org/appstores/#install-preware">Preware</a><br>
     Need <a href="http://www.webosarchive.org/docs/appstores/">help installing</a>?<br>
     <div style="margin-top: 8px">
       <a href="https://github.com/webOSArchive/webos-catalog-backend/blob/main/changelog.md">Change Log</a> |

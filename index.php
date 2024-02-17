@@ -1,8 +1,3 @@
-<?php
-if ($_SERVER['QUERY_STRING'] == "latest") {
-  header("Location: latest.php");
-}
-?>
 <?php include('tldchange-notice.php'); ?>
 <html>
 <head>
@@ -33,6 +28,21 @@ include('meta-social-common.php');
 <link rel="stylesheet" href="webmuseum.css">
 <style>
 td { padding: 20px;}
+.blink {
+  font-weight:bold;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    opacity: 20%;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 100%;
+  }
+}
 </style>
 </head>
 <body class="content">
@@ -49,7 +59,16 @@ td { padding: 20px;}
 <div id="wrapper" style="text-align: center; padding-top:28px;">
   <div id="col1" style="display: inline-block; vertical-align: top;" class="layoutCell">
     <h3>Download for webOS 2.0+ Devices</h3>
-    <a href="<?php echo $use_uri?>">Get Current Version: <?php echo $outputObj["version"]?></a><br><br>
+    <?php
+    if ($_SERVER['QUERY_STRING'] == "latest")
+      echo "<span class='blink'>";
+    ?>
+    <a href="<?php echo $use_uri?>">Get Current Version: <?php echo $outputObj["version"]?></a>
+    <?php
+    if ($_SERVER['QUERY_STRING'] == "latest")
+      echo "</span>";
+    ?>
+    <br><br>
     <small>
     Requires <a href="https://docs.webosarchive.org/appstores/#install-preware">Preware</a><br>
     Need <a href="http://www.webosarchive.org/docs/appstores/">help installing</a>?<br>

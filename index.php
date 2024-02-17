@@ -1,3 +1,8 @@
+<?php
+if ($_SERVER['QUERY_STRING'] == "latest") {
+  header("Location: latest.php");
+}
+?>
 <?php include('tldchange-notice.php'); ?>
 <html>
 <head>

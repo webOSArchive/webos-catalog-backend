@@ -25,12 +25,12 @@ function repositionArrayElement(array &$array, $value, int $order): void
 
 //Figure out what protocol the client wanted
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-    $protocol = "https://";
+    $PROTOCOL = "https://";
 else
-    $protocol = "http://";
+    $PROTOCOL = "http://";
 
 //Figure out where images are
-$img_path = $protocol . $config["image_host"] . "/";
+$img_path = $PROTOCOL . $config["image_host"] . "/";
 
 //Support for safe search
 $_safe = "on"; 
@@ -45,7 +45,7 @@ if ($_safe != "on")
 	$adult = "&adult=true";
 
 //Get the category list
-$category_path = $protocol . $config["service_host"] . "/WebService/getMuseumMaster.php?count=All&device=All&category=All&query=&page=0&blacklist=&key=web_categories&museumVersion=web&hide_missing=false" . $adult;
+$category_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=All&device=All&category=All&query=&page=0&blacklist=&key=web_categories&museumVersion=web&hide_missing=false" . $adult;
 $category_file = fopen($category_path, "rb");
 $category_content = stream_get_contents($category_file);
 fclose($category_file);
@@ -56,7 +56,7 @@ sort($category_list);
 //Get the app list if there is a category query
 if (isset($_GET['category']) && isset($_GET['count']))
 {
-	$app_path = $protocol . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $_GET['count'] ."&device=All&category=". urlencode($_GET['category']) ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
+	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $_GET['count'] ."&device=All&category=". urlencode($_GET['category']) ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
 	$app_file = fopen($app_path, "rb");
 	$app_content = stream_get_contents($app_file);
 	fclose($app_file);
@@ -64,7 +64,7 @@ if (isset($_GET['category']) && isset($_GET['count']))
 }
 elseif (isset($_GET['search']))
 {
-	$app_path = $protocol . $config["service_host"] . "/WebService/getSearchResults.php?app=". urlencode($_GET['search']) . $adult;
+	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getSearchResults.php?app=". urlencode($_GET['search']) . $adult;
 	$app_file = fopen($app_path, "rb");
 	$app_content = stream_get_contents($app_file);
 	fclose($app_file);
@@ -81,6 +81,7 @@ include('meta-social-common.php');
 ?>
 <title>webOS App Museum II - Web Catalog</title>
 <link rel="stylesheet" href="webmuseum.css">
+<link href="<?php echo $PROTOCOL . "://www.webosarchive.org/app-template/"?>web.css" rel="stylesheet" type="text/css" >
 <script>
 	function changeSearchFilter() {
 		if (document.getElementById("txtSearch") && document.getElementById("txtSearch").value == "") {
@@ -91,7 +92,8 @@ include('meta-social-common.php');
 </head>
 <body onload="if (document.getElementById('txtSearch')) { document.getElementById('txtSearch').focus(); }">
 <?php include("menu.php") ?>
-<div class="show-museum"  style="margin-right:1.3em">
+
+<div class="show-museum" style="margin-left:20%;margin-right:20%">
 <h2><a href="<?php echo ($homePath); ?>"><img src="assets/icon.png" style="height:64px;width:64px;margin-top:-10px;" align="middle"></a> &nbsp;<a href="<?php echo ($homePath); ?>">webOS App Museum II</a></h2>
 	<div class="museumMaster" style="margin-left:1.3em;">
 		<div class="categoryMenu">

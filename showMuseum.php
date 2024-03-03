@@ -93,7 +93,7 @@ include('meta-social-common.php');
 <body onload="if (document.getElementById('txtSearch')) { document.getElementById('txtSearch').focus(); }">
 <?php include("menu.php") ?>
 
-<div class="show-museum" style="margin-left:20%;margin-right:20%">
+<div class="show-museum" style="margin-left:auto;margin-right:auto">
 <h2><a href="<?php echo ($homePath); ?>"><img src="assets/icon.png" style="height:64px;width:64px;margin-top:-10px;" align="middle"></a> &nbsp;<a href="<?php echo ($homePath); ?>">webOS App Museum II</a></h2>
 	<div class="museumMaster" style="margin-left:1.3em;">
 		<div class="categoryMenu">

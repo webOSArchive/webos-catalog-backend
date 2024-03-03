@@ -110,7 +110,7 @@ include('meta-social-app.php');
 </head>
 <body onload="populateLink()">
 <?php include("menu.php") ?>
-<div class="show-museum" style="margin-left:20%;margin-right:20%">
+<div class="show-museum" style="margin-left:auto;margin-right:auto">
 	<h2><a href="<?php echo ($homePath); ?>"><img src="assets/icon.png" style="height:64px;width:64px;margin-top:-10px;" align="middle"></a> &nbsp;<a href="<?php echo ($homePath); ?>">webOS App Museum II</a></h2>
 	<br>
 	<table border="0" style="margin-left:1.3em;">

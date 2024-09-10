@@ -208,6 +208,7 @@ com.ctladvance.bobbleheadadora_1.5.2_all.ipk
 com.appible.adriftinnewyorkaudiotext_1.0.0_all.ipk
 com.dijit.adultgirlsinblack_3.1.1_all.ipk
 com.ottg.adultstarsweekly_1.0.0_all.ipk
+com.realtechvr.app.badseeds_1.2.0_all.ipk
 com.rextoy.advancedcalculator_1.1.3_all.ipk
 com.rextoy.advancedcalculatormobile_1.1.3_all.ipk
 com.willculus.ct83_1.0.4_all.ipk

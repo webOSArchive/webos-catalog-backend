@@ -126,7 +126,13 @@ function returnDownloadDataFormatted($config, $mimeType) {
         try {
             if ($i <= $topAppCount) {
                 $appDetail = getDetailData($config["metadata_host"], $key);
-                if (isset($appDetail) && is_array($appDetail)) {
+                if (!isset($appDetail)) {
+                    error_log("Could not get app detail during app catalog report");
+                }
+                if (!is_array($appDetail)) {
+                    error_log("Could not parse app detail during app catalog report: " . $appDetail);
+                }
+                else {
                     $appName = $appDetail['publicApplicationId'];
                     $thisApp = new App();
                     $thisApp->appId = $key;
@@ -134,8 +140,6 @@ function returnDownloadDataFormatted($config, $mimeType) {
                     $thisApp->count = $val;
                     $downloadReport->topApps[$i] = $thisApp;
                     $i++;    
-                } else {
-                    error_log("Could not get app detail during app catalog report");
                 }
             } else {
                 break;

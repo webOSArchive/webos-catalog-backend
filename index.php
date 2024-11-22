@@ -98,7 +98,7 @@ echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRo
   <div id="footer">
     &copy; webOSArchive <?php echo date("Y"); ?>
     <div id="footer-links">
-      <a href="<?php echo $github . "/blob/master/PrivacyPolicy.md" ?>">Privacy Policy</a>
+    <a href="<?php echo $PROTOCOL . "://www.webosarchive.org/privacy.html"?>">Privacy Policy</a>
     </div>
   </div>
   </td></tr></table>

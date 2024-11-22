@@ -1,10 +1,22 @@
-<?php include('tldchange-notice.php'); ?>
-<html>
-<head>
-<link rel="shortcut icon" href="favicon.ico">
-<meta name="viewport" content="width=300, initial-scale=0.6">
-
+<!DOCTYPE html>
+<html lang="en">
 <?php
+//This file is only used for advertising on a hosting webserver
+
+//App Details
+$title = "webOS App Museum II";
+$subtitle = " | webOS Archive";
+$description = "This is a project to archive, restore and provide access to the historical catalog of apps for Palm/HP's defunct mobile platform, webOS.";
+$github = "https://github.com/webosarchive/";
+$icon = "assets/icon.png";
+
+//Figure out what protocol the client wanted
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+	$PROTOCOL = "https";
+} else {
+	$PROTOCOL = "http";
+}
+
 $config = include('WebService/config.php');
 
 //Get the app info
@@ -19,85 +31,77 @@ if (strpos($outputObj["filename"], "://") === false) {
 } else {
   $use_uri = $outputObj["filename"];
 }
+?>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-//Add social media meta tags
-include('meta-social-common.php');
+  <meta name="description" content="<?php echo $description; ?>">
+  <meta name="keywords" content="webos, firefoxos, pwa, rss">
+  <meta name="author" content="webOS Archive">
+  <meta property="og:title" content="<?php echo $title; ?>">
+  <meta property="og:description" content="<?php echo $description; ?>">
+  <meta property="og:image" content="https://<?php echo $_SERVER['SERVER_NAME'] ?>/hero.png">
+
+  <meta name="twitter:card" content="app">
+  <meta name="twitter:site" content="@webOSArchive">
+  <meta name="twitter:title" content="<?php echo $title; ?>">
+  <meta name="twitter:description" content="<?php echo $description; ?>">
+  <meta name="twitter:app:id:googleplay" content="<?php echo $playId; ?>">
+
+  <title><?php echo $title . $subtitle; ?></title>
+  
+  <link id="favicon" rel="icon" type="image/png" sizes="64x64" href="<?php echo $icon;?>">
+  <link href="<?php echo $PROTOCOL . "://www.webosarchive.org/app-template/"?>web.css" rel="stylesheet" type="text/css" >
+  <style>
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    #hero { padding-top:80px }
+    @media all and (max-width: 599px) {
+        #hero { padding-top: 0px !important; }
+    }
+  </style>
+</head>
+<body>
+<?php
+
+$docRoot = "./";
+echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRoot . "&protocol=" . $PROTOCOL);
 ?>
 
-<title>webOS App Museum II</title>
-<link rel="stylesheet" href="webmuseum.css">
-<style>
-td { padding: 20px;}
-.blink {
-  font-weight:bold;
-  animation: blink-animation 1s steps(5, start) infinite;
-  -webkit-animation: blink-animation 1s steps(5, start) infinite;
-}
-@keyframes blink-animation {
-  to {
-    opacity: 20%;
-  }
-}
-@-webkit-keyframes blink-animation {
-  to {
-    opacity: 100%;
-  }
-}
-</style>
-</head>
-<body class="content">
-<?php include('menu.php'); ?>
-<p align='middle' style='margin-top:50px;'>
-
-  <img src="assets/icon.png"><br/>
-  &nbsp;<br/>
-  <strong>webOS App Museum II</strong><br/>
-  <small>A project of <a href="http://www.webosarchive.org">webOS Archive</a></small><br>
-
-</p>
-
-<div id="wrapper" style="text-align: center; padding-top:28px;">
-  <div id="col1" style="display: inline-block; vertical-align: top;" class="layoutCell">
-    <h3>Download for webOS 2.0+ Devices</h3>
-    <?php
-    if ($_SERVER['QUERY_STRING'] == "latest")
-      echo "<span class='blink'>";
-    ?>
-    <a href="<?php echo $use_uri?>">Get Current Version: <?php echo $outputObj["version"]?></a>
-    <?php
-    if ($_SERVER['QUERY_STRING'] == "latest")
-      echo "</span>";
-    ?>
-    <br><br>
-    <small>
-    Requires <a href="https://docs.webosarchive.org/appstores/#install-preware">Preware</a><br>
-    Need <a href="http://www.webosarchive.org/docs/appstores/">help installing</a>?<br>
-    <div style="margin-top: 8px">
-      <a href="https://github.com/webOSArchive/webos-catalog-backend/blob/main/changelog.md">Change Log</a> |
-      <a href="https://appcatalog.webosarchive.org/WebService/reports/">View Stats</a> | 
-      <a href="https://www.github.com/codepoet80/webos-catalog-backend">View Source</a>
+  <table width="100%" border=0 style="width:100%;border:0px"><tr><td align="center" style="width:100%;height:100%;border:0px">
+  <div id="row">
+    <div id="content" align="left">
+      <h1><img src="<?php echo $icon;?>" width="60" height="60" alt=""/><?php echo $title; ?></h1>
+      <p><?php echo $description; ?></p>
+      <p>The recovered catalog items are stored on the <a href="https://archive.org/details/webosappcatalog">Internet Archive</a>, and can be browsed on the web, or on-device via Preware or a native client. </p>
+      <p>
+        <a class="download-link" href="<?php echo $use_uri?>">
+          <img src="assets/icon.png" style="vertical-align:middle" alt="Download for webOS" title="Download for webOS" width="48" height="48"/> Download for webOS
+        </a> | <a href="http://www.webosarchive.org/docs/appstores/">Help</a>
+        <br>
+        <a class="download-link" href="https://github.com/h8pewou/legacy-webos-feeds/blob/main/README.md#wosa-feed">
+           <img src="assets/preware-icon.png" style="vertical-align:middle" alt="Add to Preware" title="Add to Preware" width="48" height="48"/> Add to Preware 
+        </a>
+        <br>
+        <a class="download-link" href="showMuseum.php">
+           <img src="assets/browser-icon.png" style="vertical-align:middle" alt="Browse Online" title="Browse Online" width="48" height="48"/> Browse Online
+        </a>
+      </p>
     </div>
-    <br>
-    </small>
+    <div id="hero">
+      <img src="hero.png" width="480" alt="<?php echo $title ?>" />
+      <p><small>Catalog metadata is available on <?php echo "<a href='" . $github . "'>GitHub</a>"?> | <a href="https://appcatalog.webosarchive.org/WebService/reports/">View Stats</a><br>
+      Many items are still missing! If you have your own archive, please check the <a href="wanted.txt">wanted</a> <a href="wanted.csv">list</a> and <a href="mailto:webosarchive@gmail.com">email us</a> if you have any matches!</small></p>
+    </div>
   </div>
-
-  <div id="col2" style="display: inline-block; vertical-align: top;" class="layoutCell">
-    <h3>Other Ways to view the Museum</h3>
-    <p><a href="showMuseum.php">Browse catalog online</a></p>
-    <p><a href="https://github.com/h8pewou/legacy-webos-feeds/blob/main/README.md#wosa-feed">Add feed to Preware</a></p>
-    <p><a href="https://archive.org/details/webOSAppCatalogArchive-Complete">Full archive from archive.org</a><br/>
-    <small><i>36.9 GB: 3851 apps cataloged, 1346 un-cataloged</i></small></p>
+  <div id="footer">
+    &copy; webOSArchive <?php echo date("Y"); ?>
+    <div id="footer-links">
+      <a href="<?php echo $github . "/blob/master/PrivacyPolicy.md" ?>">Privacy Policy</a>
+    </div>
   </div>
-</div>
-
-<p align='middle'><small>
-  webOS Archive provides the Museum infrastructure and metadata, but relies on community mirrors to host the files.<br>
-  Do you have some historical IPKs archived that you want to contribute? Check the Wanted list (<a href="http://appcatalog.webosarchive.org/wanted.txt">TXT</a>, <a href="http://appcatalog.webosarchive.org/wanted.csv">CSV</a>)<br>
-  <?php
-    if (isset($config['contact_email']) && !empty($config['contact_email'])) {
-      echo "If you can help, <a href=\"javascript:document.location=atob('" . base64_encode("mailto:" . $config['contact_email'] . "?subject=webOS App Museum") . "')\">email the curator</a>!";
-    }
-  ?>
-</small></p>
+  </td></tr></table>
 </body>
 </html>

@@ -126,7 +126,7 @@ function returnDownloadDataFormatted($config, $mimeType) {
         try {
             if ($i <= $topAppCount) {
                 $appDetail = getDetailData($config["metadata_host"], $key);
-                if (isset($appDetail)) {
+                if (isset($appDetail) && is_array($appDetail)) {
                     $appName = $appDetail['publicApplicationId'];
                     $thisApp = new App();
                     $thisApp->appId = $key;

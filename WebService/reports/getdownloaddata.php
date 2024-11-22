@@ -123,17 +123,22 @@ function returnDownloadDataFormatted($config, $mimeType) {
     arsort($apps);  //sort apps descending by count
     $i = 1;
     foreach ($apps as $key => $val) {
-        if ($i <= $topAppCount) {
-            $appDetail = getDetailData($config["metadata_host"], $key);
-            $appName = $appDetail['publicApplicationId'];
-            $thisApp = new App();
-            $thisApp->appId = $key;
-            $thisApp->appName = $appName;
-            $thisApp->count = $val;
-            $downloadReport->topApps[$i] = $thisApp;
-            $i++;
-        } else {
-            break;
+        try {
+            if ($i <= $topAppCount) {
+                $appDetail = getDetailData($config["metadata_host"], $key);
+                $appName = $appDetail['publicApplicationId'];
+                $thisApp = new App();
+                $thisApp->appId = $key;
+                $thisApp->appName = $appName;
+                $thisApp->count = $val;
+                $downloadReport->topApps[$i] = $thisApp;
+                $i++;
+            } else {
+                break;
+            }
+        }
+        catch (Exception $ex) {
+            error_log("Could not parse report data: " . $ex->getMessage());
         }
     }
 

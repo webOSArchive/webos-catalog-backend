@@ -48,7 +48,6 @@ if (strpos($outputObj["filename"], "://") === false) {
   <meta name="twitter:site" content="@webOSArchive">
   <meta name="twitter:title" content="<?php echo $title; ?>">
   <meta name="twitter:description" content="<?php echo $description; ?>">
-  <meta name="twitter:app:id:googleplay" content="<?php echo $playId; ?>">
 
   <title><?php echo $title . $subtitle; ?></title>
   

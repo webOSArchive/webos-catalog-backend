@@ -6,7 +6,7 @@
 //App Details
 $title = "webOS App Museum II";
 $subtitle = " | webOS Archive";
-$description = "This is a project to archive, restore and provide access to the historical catalog of apps for Palm/HP's defunct mobile platform, webOS.";
+$description = "The App Museum is a community project to archive, restore and provide access to the historical catalog of apps for Palm/HP's defunct mobile platform, webOS.";
 $github = "https://github.com/webosarchive/";
 $icon = "assets/icon.png";
 

@@ -56,7 +56,7 @@ if (strpos($outputObj["filename"], "://") === false) {
   <style>
     a { text-decoration: none; }
     a:hover { text-decoration: underline; }
-    #hero { padding-top:80px }
+    #hero { padding-top:60px }
     @media all and (max-width: 599px) {
         #hero { padding-top: 0px !important; }
     }

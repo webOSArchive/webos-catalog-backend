@@ -15,7 +15,6 @@ function returnUpdateDataFormatted($config, $mimeType) {
     $count = 0;
     $startDate = "";
     $lastDate = "";
-    $excluded = array("184.56.40.223");
     $geoRegions = array();
     $ipRegions = array();
     class GeoRegion

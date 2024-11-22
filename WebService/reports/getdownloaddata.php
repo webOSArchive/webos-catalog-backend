@@ -126,19 +126,23 @@ function returnDownloadDataFormatted($config, $mimeType) {
         try {
             if ($i <= $topAppCount) {
                 $appDetail = getDetailData($config["metadata_host"], $key);
-                $appName = $appDetail['publicApplicationId'];
-                $thisApp = new App();
-                $thisApp->appId = $key;
-                $thisApp->appName = $appName;
-                $thisApp->count = $val;
-                $downloadReport->topApps[$i] = $thisApp;
-                $i++;
+                if (isset($appDetail)) {
+                    $appName = $appDetail['publicApplicationId'];
+                    $thisApp = new App();
+                    $thisApp->appId = $key;
+                    $thisApp->appName = $appName;
+                    $thisApp->count = $val;
+                    $downloadReport->topApps[$i] = $thisApp;
+                    $i++;    
+                } else {
+                    error_log("Could not get app detail during app catalog report");
+                }
             } else {
                 break;
             }
         }
         catch (Exception $ex) {
-            error_log("Could not parse report data: " . $ex->getMessage());
+            error_log("Could not parse app catalog report data: " . $ex->getMessage());
         }
     }
 

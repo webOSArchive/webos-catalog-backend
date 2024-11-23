@@ -80,10 +80,6 @@ if (isset($app_detail["filename"]) && strpos($app_detail["filename"], "://") ===
 //alternateFileName
 if (isset($app_detail["alternateFileName"]) && strpos($app_detail["alternateFileName"], "://") === false) {
 	$altPlainURI = $protocol . $config["package_host"] . "/" . $app_detail["alternateFileName"];
-} else {
-	$altPlainURI = $app_detail["alternateFileName"];
-	$altPlainURI = str_replace("http://",$protocol,$altPlainURI);
-        $altPlainURI = str_replace("https://",$protocol,$altPlainURI);
 }
 //Encode URL to reduce brute force downloads
 //	The complete archive will be posted elsewhere to save my bandwidth
@@ -203,8 +199,8 @@ include('meta-social-app.php');
 	?>
 	<div style="display:none;margin-top:18px">
 	<?php
-	//echo (json_encode($app_a) . "<br><br>");
-	//echo $content;
+	echo (json_encode($app_a) . "<br><br>");
+	echo $content;
 	?>
 </div>
 </body>

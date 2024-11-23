@@ -53,12 +53,6 @@ While this project represents the back-end (and web-based front-end) of App Muse
 
 Links to archives of the entire App Museum II can be found at [appcatalog.webosarchive.org](http://appcatalog.webosarchive.org). 
 
-Mirrors are available at:
-+ http://museum.weboslives.eu/AppPackages/
-+ http://wosa-apparchive.b-cdn.net/AppPackages/
-
-Please contact the curator if you are able to host a mirror. Note that all hosted content for a museum instance *must* be available over HTTP as webOS has out-dated support for HTTPS.
-
 The full historical dataset includes other files that, for various reasons, are not a part of the Museum. These files are also a part of this [complete archive](https://archive.org/details/webOSAppCatalogArchive-Complete). Mirrors, like the host, must be not-for-profit.
 
 ## What is This?

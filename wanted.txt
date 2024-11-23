@@ -180,7 +180,6 @@ uk.co.mobilecommerce.aagolf_1.0.1_all.ipk
 uk.co.mobilecommerce.aahotel_1.0.1_all.ipk
 uk.co.mobilecommerce.aapub_1.0.1_all.ipk
 uk.co.mobilecommerce.aarestaurant_1.0.1_all.ipk
-com.smartkidsontherun.abctrace_3.0.0_all.ipk
 com.mobile1up.abiosis_1.0.1_all.ipk
 com.appbookshop.epub.abouttoothachesandtoothcare_1.0.0_all.ipk
 com.appible.abovelifesturmoilaudio_1.0.5_all.ipk
@@ -213,7 +212,6 @@ com.rextoy.advancedcalculator_1.1.3_all.ipk
 com.rextoy.advancedcalculatormobile_1.1.3_all.ipk
 com.willculus.ct83_1.0.4_all.ipk
 com.dblpartners.aemt_1.0.3_all.ipk
-com.myappcatalog.advancedhtmlemail_1.1.2_all.ipk
 de.muetzner.advent2010_1.0.0_all.ipk
 com.thereturn.adventurebook_1.2.1_all.ipk
 com.mobifusion.mobirdr.adventureofsherlockholmes_1.0.0_all.ipk
@@ -1042,7 +1040,6 @@ com.brighthouselabs.chinflfans_1.0.0_all.ipk
 com.brighthouselabs.chinhlfans_1.0.0_all.ipk
 com.appbookshop.childsafety_1.0.0_all.ipk
 com.appbookshop.childhoodobesity_1.0.0_all.ipk
-com.pjnation.chinesecheckersfortouchpad_1.2.0_all.ipk
 com.team1.cfm_1.0.0_all.ipk
 com.scrollmotion.chineseliteraturecomprisingthean-0010056-pd_0.9.904_all.ipk
 com.brighthouselabs.chineserecipes_1.0.0_all.ipk
@@ -3556,8 +3553,6 @@ com.funmobility.peanuts_1.0.0_all.ipk
 com.brighthouselabs.pearlsbuckquotes_1.1.0_all.ipk
 com.soundboardmasters.peeweehermansoundboard_1.1.3_all.ipk
 com.jdfsoftware.pegpics_1.0.0_all.ipk
-com.pulse.pegpuzzleabc123_1.0.0_all.ipk
-com.pulse.pegpuzzle_1.0.2_all.ipk
 com.asc.rc.penguinpanic_1.0.0_all.ipk
 com.brighthouselabs.pennsylvaniadutchrecipes_1.0.0_all.ipk
 com.sourcen.people_1.2.1_all.ipk
@@ -4450,7 +4445,6 @@ com.splashdata.splashidtouchpad_4.2.3_all.ipk
 com.laneone.spoofacall_1.0.0_all.ipk
 de.muetzner.st2011_1.2.3_all.ipk
 com.zumobi.mlb_3.0.2_all.ipk
-com.zumobi.mlb.tablet_1.0.0_all.ipk
 com.speedymarks.palmpre.sports_1.0.3_all.ipk
 com.appbookshop.epub.sportscarencyclopedia_1.0.0_all.ipk
 com.speedymarks.palmpad.sports_1.0.1_all.ipk
@@ -4595,7 +4589,6 @@ com.triactivemedia.tamiya_0.9.1_all.ipk
 com.brighthouselabs.tammlbfans_1.0.0_all.ipk
 com.brighthouselabs.tamnflfans_1.0.0_all.ipk
 com.brighthouselabs.tamnhlfans_1.0.0_all.ipk
-com.leonardlee.tangrampuzzle_1.1.3_all.ipk
 com.epicnorth.tanktracker_1.5.5_all.ipk
 com.mobifusion.mobirdr.chineseceligion_1.0.0_all.ipk
 com.iopalmapps.tapflickslide_1.1.3_all.ipk

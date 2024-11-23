@@ -70,18 +70,31 @@ if (isset($app_detail["versionNote"])) {
 $author_url = "author/" . str_replace(" " , "%20", $found_app["author"]);
 $share_url = $protocol . $config["service_host"] . "/app/" . str_replace(" " , "", $found_app["title"]);
 //Support absolute download paths (files hosted elsewhere)
-if (strpos($app_detail["filename"], "://") === false) {
+if (isset($app_detail["filename"]) && strpos($app_detail["filename"], "://") === false) {
 	$plainURI = $protocol . $config["package_host"] . "/" . $app_detail["filename"];
 } else {
 	$plainURI = $app_detail["filename"];
 	$plainURI = str_replace("http://",$protocol,$plainURI);
         $plainURI = str_replace("https://",$protocol,$plainURI);
 }
+//alternateFileName
+if (isset($app_detail["alternateFileName"]) && strpos($app_detail["alternateFileName"], "://") === false) {
+	$altPlainURI = $protocol . $config["package_host"] . "/" . $app_detail["alternateFileName"];
+} else {
+	$altPlainURI = $app_detail["alternateFileName"];
+	$altPlainURI = str_replace("http://",$protocol,$altPlainURI);
+        $altPlainURI = str_replace("https://",$protocol,$altPlainURI);
+}
 //Encode URL to reduce brute force downloads
 //	The complete archive will be posted elsewhere to save my bandwidth
 $downloadURI = base64_encode($plainURI);
 $splitPos = rand(1, strlen($downloadURI) - 2);
 $downloadURI = substr($downloadURI, 0, $splitPos) . $_SESSION['encode_salt'] . substr($downloadURI, $splitPos);
+if (isset($altPlainURI)) {
+	$altDownloadURI = base64_encode($altPlainURI);
+	$splitPos = rand(1, strlen($altDownloadURI) - 2);
+	$altDownloadURI = substr($altDownloadURI, 0, $splitPos) . $_SESSION['encode_salt'] . substr($altDownloadURI, $splitPos);
+}
 
 //Figure out where to go back to
 parse_str($_SERVER["QUERY_STRING"], $query);
@@ -139,6 +152,11 @@ include('meta-social-app.php');
 	?>
 		<tr><td class="rowTitle">Download</td><td colspan="2" class="rowDetail" id="tdDownloadLink" title="Download Link Decoded by Javascript" data-encoded-uri="<?php echo $downloadURI ?>" data-app-id="<?php echo $found_app["id"] ?>"><i>Requires Javascript</i></td></tr>
 	<?php
+	    if (isset($altDownloadURI)) {
+			?>
+			<tr><td class="rowTitle">Download</td><td colspan="2" class="rowDetail" id="tdDownloadLink" title="Download Link Decoded by Javascript" data-encoded-uri="<?php echo $downloadURI ?>" data-app-id="<?php echo $found_app["id"] ?>"><i>Requires Javascript</i></td></tr>
+			<?php
+		}
 	}
 	?>
 

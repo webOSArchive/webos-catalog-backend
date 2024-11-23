@@ -7,7 +7,7 @@ function populateLink() {
     linkTD.innerHTML = "<a href=\"javascript:getLink('" + linkTD.getAttribute("data-encoded-uri") + "', " + linkTD.getAttribute("data-app-id") + ")\">Direct Link</a>";
     var linkAltTD = document.getElementById("tdAltDownloadLink");
     if (linkAltTD)
-        linkAltTD.innerHTML = "<a href=\"javascript:getLink('" + linkTD.getAttribute("data-encoded-uri") + "', " + linkTD.getAttribute("data-app-id") + ")\">Direct Link</a>";
+        linkAltTD.innerHTML = "<a href=\"javascript:getLink('" + linkAltTD.getAttribute("data-encoded-uri") + "', " + linkAltTD.getAttribute("data-app-id") + ")\">Direct Link</a>";
 }
 
 function getLink(encodedLink, appId)

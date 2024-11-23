@@ -108,17 +108,17 @@
 
 ## 2024-11-23
 ### Added Discovered IPKs
-com.ingloriousapps.crushedhd_1.0.0_all.ipk (as alternate version)
-com.leonardlee.tangrampuzzle_1.1.3_all.ipk
-com.mhwsoft.preader-native_0.9.21_all.ipk (as alternate version)
-com.myappcatalog.advancedhtmlemail_1.1.2_all.ipk
-com.pjnation.chinesecheckersfortouchpad_1.2.0_all.ipk
-com.pulse.pegpuzzle_1.0.2_all.ipk
-com.pulse.pegpuzzleabc123_1.0.0_all.ipk
-com.smartkidsontherun.abctrace_3.0.0_all.ipk
-com.spapp.rpnscientific_0.10.21_all.ipk
-com.zumobi.mlb.tablet_1.0.0_all.ipk
+- com.ingloriousapps.crushedhd_1.0.0_all.ipk (as alternate version)
+- com.leonardlee.tangrampuzzle_1.1.3_all.ipk
+- com.mhwsoft.preader-native_0.9.21_all.ipk (as alternate version)
+- com.myappcatalog.advancedhtmlemail_1.1.2_all.ipk
+- com.pjnation.chinesecheckersfortouchpad_1.2.0_all.ipk
+- com.pulse.pegpuzzle_1.0.2_all.ipk
+- com.pulse.pegpuzzleabc123_1.0.0_all.ipk
+- com.smartkidsontherun.abctrace_3.0.0_all.ipk
+- com.spapp.rpnscientific_0.10.21_all.ipk
+- com.zumobi.mlb.tablet_1.0.0_all.ipk
 
 ### Added Newly Submitted IPKs
-com.motral.yandex-maps_0.3.2_all.ipk
-com.wosa.imessage_1.0.0_all.ipk
+- com.motral.yandex-maps_0.3.2_all.ipk
+- com.wosa.imessage_1.0.0_all.ipk

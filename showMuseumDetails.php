@@ -150,7 +150,7 @@ include('meta-social-app.php');
 	<?php
 	    if (isset($altDownloadURI)) {
 			?>
-			<tr><td class="rowTitle">Alternate</td><td colspan="2" class="rowDetail" id="tdAltDownloadLink" title="Download Link Decoded by Javascript" data-encoded-uri="<?php echo $altDownloadURI ?>" data-app-id="<?php echo $found_app["id"] ?>"><i>Requires Javascript</i></td></tr>
+			<tr><td class="rowTitle">Alternate Version</td><td colspan="2" class="rowDetail" id="tdAltDownloadLink" title="Download Link Decoded by Javascript" data-encoded-uri="<?php echo $altDownloadURI ?>" data-app-id="<?php echo $found_app["id"] ?>"><i>Requires Javascript</i></td></tr>
 			<?php
 		}
 	}

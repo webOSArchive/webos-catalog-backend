@@ -39,11 +39,11 @@ if ($found_id == "null") {
 
 //Figure out what protocol the client wanted
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-    $protocol = "https://";
+    $PROTOCOL = "https://";
 else
-    $protocol = "http://";
+    $PROTOCOL = "http://";
 
-$meta_path = $protocol . $config["service_host"] . "/WebService/getMuseumDetails.php?id=" . $found_id;
+$meta_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumDetails.php?id=" . $found_id;
 
 $meta_file = fopen($meta_path, "rb");
 $content = stream_get_contents($meta_file);
@@ -52,7 +52,7 @@ fclose($meta_file);
 $app_detail = json_decode($content, true);
 
 //Improve some strings for web output
-$img_path = $protocol . $config["image_host"] . "/";
+$img_path = $PROTOCOL . $config["image_host"] . "/";
 if (isset($app_detail["description"])) {
 	$app_detail["description"] = str_replace("\n", "<br>", $app_detail["description"]);
 	$app_detail["description"] = str_replace("\r\n", "<br>", $app_detail["description"]);
@@ -68,7 +68,7 @@ if (isset($app_detail["versionNote"])) {
 	
 //Let's make some URLs!
 $author_url = "author/" . str_replace(" " , "%20", $found_app["author"]);
-$share_url = $protocol . $config["service_host"] . "/app/" . str_replace(" " , "", $found_app["title"]);
+$share_url = $PROTOCOL . $config["service_host"] . "/app/" . str_replace(" " , "", $found_app["title"]);
 //Support absolute download paths (files hosted elsewhere)
 if (isset($app_detail["filename"]) && strpos($app_detail["filename"], "://") === false) {
 	if ($PROTOCOL == "https://")

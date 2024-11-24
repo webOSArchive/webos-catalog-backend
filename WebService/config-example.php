@@ -16,7 +16,7 @@ return array(
         'service_host' => 'appcatalog.webosarchive.org',
         'metadata_host' => 'appmetadata.webosarchive.org',
         'image_host' => select_lb_resource($image_mirrors),
-        'package_host' => select_lb_resource($package_mirrors),
+        'package_host' => select_lb_resource($package_mirror_plain),
         'package_host_secure' => $package_mirror_secure,
         'contact_email' => 'webosarchive@gmail.com'
 );

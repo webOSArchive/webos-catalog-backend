@@ -68,18 +68,17 @@ if (isset($app_detail["versionNote"])) {
 	
 //Let's make some URLs!
 $author_url = "author/" . str_replace(" " , "%20", $found_app["author"]);
-$share_url = $protocol . $config["service_host"] . "/app/" . str_replace(" " , "", $found_app["title"]);
+$share_url = "http://" . $config["service_host"] . "/app/" . str_replace(" " , "", $found_app["title"]);
 //Support absolute download paths (files hosted elsewhere)
 if (isset($app_detail["filename"]) && strpos($app_detail["filename"], "://") === false) {
-	$plainURI = $protocol . $config["package_host"] . "/" . $app_detail["filename"];
+	$plainURI = "http://" . $config["package_host"] . "/" . $app_detail["filename"];
 } else {
 	$plainURI = $app_detail["filename"];
-	$plainURI = str_replace("http://",$protocol,$plainURI);
-        $plainURI = str_replace("https://",$protocol,$plainURI);
+    $plainURI = str_replace("https://","http://",$plainURI);
 }
 //alternateFileName
 if (isset($app_detail["alternateFileName"]) && strpos($app_detail["alternateFileName"], "://") === false) {
-	$altPlainURI = $protocol . $config["package_host"] . "/" . $app_detail["alternateFileName"];
+	$altPlainURI = "http://" . $config["package_host"] . "/" . $app_detail["alternateFileName"];
 }
 //Encode URL to reduce brute force downloads
 //	The complete archive will be posted elsewhere to save my bandwidth

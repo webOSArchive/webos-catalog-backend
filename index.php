@@ -74,7 +74,7 @@ echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRo
     <div id="content" align="left">
       <h1><img src="<?php echo $icon;?>" width="60" height="60" alt=""/><?php echo $title; ?></h1>
       <p><?php echo $description; ?></p>
-      <p>The recovered catalog items are stored on the <a href="https://archive.org/details/webosappcatalog">Internet Archive</a>, and can be browsed on the web, or on-device via Preware or a native client. </p>
+      <p>The recovered catalog items are stored on the <a href="https://archive.org/details/webOSAppCatalogArchive-Complete">Internet Archive</a>, and can be browsed on the web, or on-device via Preware or a native client. </p>
       <p>
         <a class="download-link" href="<?php echo $use_uri?>">
           <img src="assets/icon.png" style="vertical-align:middle" alt="Download for webOS" title="Download for webOS" width="48" height="48"/> Download for webOS

@@ -7,6 +7,7 @@ else
     error_reporting(E_ERROR | E_PARSE);
 
 returnUpdateDataFormatted($config, $mimeType);
+$excluded = [];
 
 function returnUpdateDataFormatted($config, $mimeType) {
     $data = fopen('../logs/updatecheck.log', 'r');
@@ -54,7 +55,7 @@ function returnUpdateDataFormatted($config, $mimeType) {
                 //accumulate (or start) the update check count for this app
                 $IP = $lineParts[1];     //first non-date column is the ip
 
-                if (!in_array($IP, $excluded)) {   //leave out my IPs
+                if (!isset($excluded) || !in_array($IP, $excluded)) {  //leave out my IPs
                     $useCode = "??";
                     $useName = "Unknown Region";
                     if (!isset($IPRegions) || !is_array($IPRegions) || !array_key_exists($IP, $IPRegions)) {

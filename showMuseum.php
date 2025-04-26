@@ -161,7 +161,7 @@ include('meta-social-common.php');
 						$search = preg_replace("/[^a-zA-Z0-9 ]+/", "", $_GET['search']);
 					}
 					?>
-					<input type="text" id="txtSearch" name="search" class="search" placeholder="Just type..." value="<?php if () { echo $search; } ?>">
+					<input type="text" id="txtSearch" name="search" class="search" placeholder="Just type..." value="<?php if (isset($search)) { echo $search; } ?>">
 
 					<input type="submit" class="search-button" value="Search">
 					<?php

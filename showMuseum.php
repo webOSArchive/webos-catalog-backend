@@ -59,7 +59,7 @@ if (isset($_GET['category']) && isset($_GET['count']))
 {
 	$category = $_GET['category'];
 	$count = preg_replace("/[^0-9]+/", "", $_GET['count']);
-	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $count ."&device=All&category=". $category ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
+	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $count ."&device=All&category=". urlencode($category) ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
 	$app_file = fopen($app_path, "rb");
 	$app_content = stream_get_contents($app_file);
 	fclose($app_file);
@@ -68,7 +68,7 @@ if (isset($_GET['category']) && isset($_GET['count']))
 elseif (isset($_GET['search']))
 {
 	$search = preg_replace("/[^a-zA-Z0-9 ]+/", "", $_GET['search']);
-	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getSearchResults.php?app=". urlencode(search) . $adult;
+	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getSearchResults.php?app=". urlencode($search) . $adult;
 	$app_file = fopen($app_path, "rb");
 	$app_content = stream_get_contents($app_file);
 	fclose($app_file);

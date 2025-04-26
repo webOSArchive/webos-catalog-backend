@@ -21,6 +21,7 @@ if (isset($_GET["author"])) {
 	$search_type = "author";
 }
 $search_str = urldecode(strtolower($search_str));
+$search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
 
 $_adult		  = false; if (isset($_GET['adult']))			{$_adult = $_GET['adult'];}
 $_onlyLuneOS  = false; if (isset($_GET['onlyLuneOS']))	{$_onlyLuneOS = $_GET['onlyLuneOS'];}

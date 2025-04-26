@@ -24,6 +24,7 @@ $found_id = "null";
 if (isset($_GET["app"])) {
 	$search_str = $_GET["app"];
 	$search_str = urldecode(strtolower($search_str));
+	$search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
 	$found_app;
 	foreach ($fullcatalog as $this_app => $app_a) {
 		if (strtolower($app_a["title"]) == $search_str || $app_a["id"] == $search_str) {

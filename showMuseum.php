@@ -58,6 +58,7 @@ sort($category_list);
 if (isset($_GET['category']) && isset($_GET['count']))
 {
 	$category = $_GET['category'];
+	$category = preg_replace("/[^a-zA-Z0-9&' ]+/", "", $_GET['category']);
 	$count = preg_replace("/[^0-9]+/", "", $_GET['count']);
 	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $count ."&device=All&category=". urlencode($category) ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
 	$app_file = fopen($app_path, "rb");

@@ -1,6 +1,11 @@
 <?PHP
 $config = include('config.php');
 include("../common.php");
+include("ratelimit.php");
+
+// Rate limit: 60 requests per hour for search
+checkRateLimit(60, 3600);
+
 header('Content-Type: application/json');
 
 $fullcatalog = load_catalogs(array("../newerAppData.json", "../archivedAppData.json"));

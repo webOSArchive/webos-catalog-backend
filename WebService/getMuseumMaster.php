@@ -1,5 +1,10 @@
 <?PHP
 	include('../common.php');
+	include('ratelimit.php');
+	
+	// Rate limit: 120 requests per hour for main catalog
+	checkRateLimit(120, 3600);
+	
 	header('Content-Type: application/json');
 	/*
 	 * query inputs:

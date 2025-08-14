@@ -1,4 +1,9 @@
 <?PHP
+	include('ratelimit.php');
+	
+	// Rate limit: 200 requests per hour for app details
+	checkRateLimit(200, 3600);
+	
 	header('Content-Type: application/json');
 
 	$id = @$_GET['id'];

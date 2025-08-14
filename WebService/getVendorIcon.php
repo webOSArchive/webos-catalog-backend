@@ -1,13 +1,56 @@
 <?PHP
+	include("ratelimit.php");
+	
+	// Rate limit: 30 requests per hour for icon fetching
+	checkRateLimit(30, 3600);
+	
 	$url = $_GET["url"];
 	$desiredSize = 32;	
 	if (!isset($url)) {
 		echo "";
 		die();
 	}
+	
+	// Security: Validate URL to prevent SSRF attacks
+	function isValidUrl($url) {
+		// Parse URL
+		$parsed = parse_url($url);
+		if (!$parsed) {
+			return false;
+		}
+		
+		// Only allow HTTP and HTTPS schemes
+		if (!isset($parsed['scheme']) || !in_array($parsed['scheme'], ['http', 'https'])) {
+			return false;
+		}
+		
+		// Block private/internal IP ranges
+		if (isset($parsed['host'])) {
+			$ip = gethostbyname($parsed['host']);
+			if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+				return false;
+			}
+		}
+		
+		// Block localhost variations
+		$blocked_hosts = ['localhost', '127.0.0.1', '::1', '0.0.0.0'];
+		if (isset($parsed['host']) && in_array(strtolower($parsed['host']), $blocked_hosts)) {
+			return false;
+		}
+		
+		return true;
+	}
+	
 	$url = str_replace(" ", "", $url);
 	$url = str_replace("%20", "", $url);
-	$url = htmlspecialchars($url);
+	$url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+	
+	// Validate URL before proceeding
+	if (!isValidUrl($url)) {
+		http_response_code(400);
+		echo "Invalid URL provided";
+		die();
+	}
 
 	$ch  =  curl_init   (); 
 		    curl_setopt ($ch, CURLOPT_URL, $url); 

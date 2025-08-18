@@ -307,11 +307,13 @@
 						}
 					}
 					if ($_random && $i === $_index ) {
-						// Get detail data directly from local files to avoid rate limiting
+						// Get detail data directly from metadata host to avoid rate limiting
 						$config = include('config.php');
-						$detail_path = "../" . $masterdata[$indices[$i]]['id'] . ".json";
-						if (file_exists($detail_path)) {
-							$detail_content = file_get_contents($detail_path);
+						$detail_path = "http://" . $config["metadata_host"] . "/" . $masterdata[$indices[$i]]['id'] . ".json";
+						$detail_file = fopen($detail_path, "rb");
+						if ($detail_file) {
+							$detail_content = stream_get_contents($detail_file);
+							fclose($detail_file);
 							$masterdata[$indices[$i]]['detail'] = json_decode($detail_content, true);
 						}
 					}

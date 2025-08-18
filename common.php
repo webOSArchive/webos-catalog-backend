@@ -47,4 +47,96 @@ function load_catalogs($catalogs) {
 	}
 	return $fullcatalog;
 }
+
+/**
+ * Search apps by title/id with fuzzy matching
+ * @param array $catalog - Full app catalog
+ * @param string $search_str - Search term (already lowercased and sanitized)
+ * @param bool $adult - Whether to include adult content
+ * @return array - Matching apps
+ */
+function search_apps($catalog, $search_str, $adult = false) {
+	$results = [];
+	foreach ($catalog as $app_a) {
+		// Look for matches
+		if (strtolower($app_a["title"]) == $search_str || 
+			$search_str == $app_a["id"] ||
+			(strpos(strtolower($app_a["title"]), $search_str) !== false) || 
+			(strpos(strtolower(str_replace(" ", "", $app_a["title"])), $search_str) !== false) 
+		  ) 
+		{
+			// Filter adult content
+			if (!$adult && $app_a['Adult']) {
+				continue;
+			}
+			array_push($results, $app_a);
+		}
+	}
+	return $results;
+}
+
+/**
+ * Search apps by author with fuzzy matching
+ * @param array $catalog - Full app catalog  
+ * @param string $search_str - Search term (already lowercased and sanitized)
+ * @param bool $adult - Whether to include adult content
+ * @return array - Matching apps
+ */
+function search_apps_by_author($catalog, $search_str, $adult = false) {
+	$results = [];
+	foreach ($catalog as $app_a) {
+		// Look for author matches
+		if (strtolower($app_a["author"]) == $search_str || 
+			(strpos(strtolower($app_a["author"]), $search_str) !== false) ||
+			(strtolower(str_replace(" ", "", $app_a["author"])) == $search_str) || 
+			(strpos(strtolower(str_replace(" ", "", $app_a["author"])), $search_str) !== false)
+		 ) 
+		{
+			// Filter adult content
+			if (!$adult && $app_a['Adult']) {
+				continue;
+			}
+			array_push($results, $app_a);
+		}
+	}
+	return $results;
+}
+
+/**
+ * Filter apps by category with adult content filtering
+ * @param array $catalog - Full app catalog
+ * @param string $category - Category to filter by ('All' for no filter)
+ * @param bool $adult - Whether to include adult content
+ * @param int $limit - Maximum number of results (0 for no limit)
+ * @return array - Filtered apps
+ */
+function filter_apps_by_category($catalog, $category, $adult = false, $limit = 0) {
+	$results = [];
+	foreach ($catalog as $app_a) {
+		// Filter by category
+		if ($category !== 'All' && $app_a['category'] !== $category) {
+			continue;
+		}
+		// Filter adult content
+		if (!$adult && $app_a['Adult']) {
+			continue;
+		}
+		array_push($results, $app_a);
+		if ($limit > 0 && count($results) >= $limit) {
+			break;
+		}
+	}
+	return $results;
+}
+
+/**
+ * Create a standard response object for app search results
+ * @param array $results - Array of app results
+ * @return array - Standardized response format
+ */
+function create_app_response($results) {
+	$responseObj = new stdClass();
+	$responseObj->data = $results;
+	return json_decode(json_encode($responseObj), true);
+}
 ?>

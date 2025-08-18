@@ -44,13 +44,14 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 else
     $PROTOCOL = "http://";
 
-$meta_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumDetails.php?id=" . $found_id;
-
-$meta_file = fopen($meta_path, "rb");
-$content = stream_get_contents($meta_file);
-fclose($meta_file);
-
-$app_detail = json_decode($content, true);
+// Get app detail data directly from local file to avoid rate limiting
+$detail_path = $found_id . ".json";
+if (file_exists($detail_path)) {
+	$content = file_get_contents($detail_path);
+	$app_detail = json_decode($content, true);
+} else {
+	$app_detail = null;
+}
 
 //Improve some strings for web output
 $img_path = $PROTOCOL . $config["image_host"] . "/";

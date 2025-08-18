@@ -19,22 +19,8 @@ $fullcatalog = load_catalogs(array("../newerAppData.json", "../archivedAppData.j
 $search_str = urldecode(strtolower($query));
 $search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
 
-$results = [];
-//Loop through all apps
-foreach ($fullcatalog as $this_app => $app_a) {
-	//Look for matches
-	if (strtolower($app_a["title"]) == $search_str || 
-		$search_str == $app_a["id"] ||
-		(strpos(strtolower($app_a["title"]), $search_str) !== false) || 
-		(strpos(strtolower(str_replace(" ", "", $app_a["title"])), $search_str) !== false) 
-	  ) 
-	{
-		array_push($results, $app_a);
-	}
-}
-$responseObj = new stdClass();
-$responseObj->data = $results;
-$app_response = json_decode(json_encode($responseObj), true);
+$results = search_apps($fullcatalog, $search_str, false);
+$app_response = create_app_response($results);
 
 //send them to result if exact match, or search page if not
 $dest_page = $protocol. $config["service_host"];

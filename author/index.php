@@ -34,22 +34,8 @@ $fullcatalog = load_catalogs(array("../newerAppData.json", "../archivedAppData.j
 $search_str = urldecode(strtolower($query));
 $search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
 
-$results = [];
-//Loop through all apps
-foreach ($fullcatalog as $this_app => $app_a) {
-	//Look for author matches
-	if (strtolower($app_a["author"]) == $search_str || 
-		(strpos(strtolower($app_a["author"]), $search_str) !== false) ||
-		(strtolower(str_replace(" ", "", $app_a["author"])) == $search_str) || 
-		(strpos(strtolower(str_replace(" ", "", $app_a["author"])), $search_str) !== false)
-	 ) 
-	{
-		array_push($results, $app_a);
-	}
-}
-$responseObj = new stdClass();
-$responseObj->data = $results;
-$app_response = json_decode(json_encode($responseObj), true);
+$results = search_apps_by_author($fullcatalog, $search_str, false);
+$app_response = create_app_response($results);
 
 //find info about author
 // from query

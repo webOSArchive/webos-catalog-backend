@@ -6,6 +6,7 @@
 
 <?php
 $config = include('WebService/config.php');
+include('common.php');
 
 function repositionArrayElement(array &$array, $value, int $order): void
 {
@@ -54,26 +55,31 @@ $category_master = json_decode($category_content, true);
 $category_list = array_keys($category_master["appCount"]);
 sort($category_list);
 
-//Get the app list if there is a category query
+//Get the app list if there is a category query - using direct catalog loading to avoid rate limiting
 if (isset($_GET['category']) && isset($_GET['count']))
 {
 	$category = $_GET['category'];
 	$category = preg_replace("/[^a-zA-Z0-9&' ]+/", "", $_GET['category']);
 	$count = preg_replace("/[^0-9]+/", "", $_GET['count']);
-	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getMuseumMaster.php?count=". $count ."&device=All&category=". urlencode($category) ."&query=&page=0&museumVersion=web&blacklist=&key=webapp_". uniqid() ."&hide_missing=false" . $adult;
-	$app_file = fopen($app_path, "rb");
-	$app_content = stream_get_contents($app_file);
-	fclose($app_file);
-	$app_response = json_decode($app_content, true);
+	
+	// Load catalog directly instead of HTTP request
+	$fullcatalog = load_catalogs(array("newerAppData.json", "archivedAppData.json"));
+	$_adult = strpos($adult, 'true') !== false;
+	
+	$results = filter_apps_by_category($fullcatalog, $category, $_adult, $count);
+	$app_response = array('data' => array('data' => $results));
 }
 elseif (isset($_GET['search']))
 {
 	$search = preg_replace("/[^a-zA-Z0-9 ]+/", "", $_GET['search']);
-	$app_path = $PROTOCOL . $config["service_host"] . "/WebService/getSearchResults.php?app=". urlencode($search) . $adult;
-	$app_file = fopen($app_path, "rb");
-	$app_content = stream_get_contents($app_file);
-	fclose($app_file);
-	$app_response = json_decode($app_content, true);
+	
+	// Load catalog directly instead of HTTP request  
+	$fullcatalog = load_catalogs(array("newerAppData.json", "archivedAppData.json"));
+	$search_str = strtolower($search);
+	$_adult = strpos($adult, 'true') !== false;
+	
+	$results = search_apps($fullcatalog, $search_str, $_adult);
+	$app_response = create_app_response($results);
 }
 
 //Figure out where to go back to

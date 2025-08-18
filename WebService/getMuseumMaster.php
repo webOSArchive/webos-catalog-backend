@@ -307,10 +307,13 @@
 						}
 					}
 					if ($_random && $i === $_index ) {
-						include_once("getMuseumDetails.php");	// NOTE: I don't like includes in the middle of my code.
-						// But in this case this is the only place I want to get the details,
-						// so I keep it together with the function call.
-						$masterdata[$indices[$i]]['detail'] = getDetailData($masterdata[$indices[$i]]['id']);
+						// Get detail data directly from local files to avoid rate limiting
+						$config = include('config.php');
+						$detail_path = "../" . $masterdata[$indices[$i]]['id'] . ".json";
+						if (file_exists($detail_path)) {
+							$detail_content = file_get_contents($detail_path);
+							$masterdata[$indices[$i]]['detail'] = json_decode($detail_content, true);
+						}
 					}
 					array_push($output, $masterdata[$indices[$i]]);
 				} else {

@@ -35,13 +35,20 @@ This is the backend for the webOS App Museum II, which serves as a historical ar
 - Includes IP detection for proxies/CDNs (Cloudflare support)
 - Auto-cleanup of old rate limit files
 
-### Internal Architecture Issue Fixed
-**Problem**: `app/index.php` and `author/index.php` were making HTTP requests to `getSearchResults.php`, which caused them to be rate limited.
+### Rate Limiting Integration Issues & Fixes
+**Problem**: When rate limiting was added to WebService endpoints, multiple internal HTTP requests started getting blocked.
 
-**Solution**: Modified both files to include search logic directly instead of making HTTP requests:
-- Include `common.php` for `load_catalogs()` function
-- Load catalog data directly from JSON files
-- Implement search logic inline
+**Files Affected & Solutions**:
+1. **app/index.php** - Was making HTTP requests to `getSearchResults.php`
+   - Fixed: Direct catalog search using `search_apps()` function
+2. **author/index.php** - Was making HTTP requests to `getSearchResults.php` 
+   - Fixed: Direct author search using `search_apps_by_author()` function
+3. **showMuseum.php** - Was making HTTP requests to both `getMuseumMaster.php` and `getSearchResults.php`
+   - Fixed: Direct catalog operations using `filter_apps_by_category()` and `search_apps()`
+4. **showMuseumDetails.php** - Was making HTTP requests to `getMuseumDetails.php`
+   - Fixed: Direct HTTP requests to `metadata_host` instead of rate-limited endpoint
+5. **getMuseumMaster.php** - Internal calls to `getDetailData()` were rate limited
+   - Fixed: Direct HTTP requests to `metadata_host` for detail data
 
 ## File Structure
 ```

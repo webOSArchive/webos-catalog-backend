@@ -29,13 +29,27 @@ if ($query == "favicon.ico") {	//this is a special case in support of Enyo front
 	$query = end($req);
 	$favicon_search = true;
 }
-$app_path = $protocol . $config["service_host"] . "/WebService/getSearchResults.php?author=". $query;
+//find all the apps directly without HTTP request to avoid rate limiting
+$fullcatalog = load_catalogs(array("../newerAppData.json", "../archivedAppData.json"));
+$search_str = urldecode(strtolower($query));
+$search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
 
-//find all the apps
-$app_file = fopen($app_path, "rb");
-$app_content = stream_get_contents($app_file);
-fclose($app_file);
-$app_response = json_decode($app_content, true);
+$results = [];
+//Loop through all apps
+foreach ($fullcatalog as $this_app => $app_a) {
+	//Look for author matches
+	if (strtolower($app_a["author"]) == $search_str || 
+		(strpos(strtolower($app_a["author"]), $search_str) !== false) ||
+		(strtolower(str_replace(" ", "", $app_a["author"])) == $search_str) || 
+		(strpos(strtolower(str_replace(" ", "", $app_a["author"])), $search_str) !== false)
+	 ) 
+	{
+		array_push($results, $app_a);
+	}
+}
+$responseObj = new stdClass();
+$responseObj->data = $results;
+$app_response = json_decode(json_encode($responseObj), true);
 
 //find info about author
 // from query

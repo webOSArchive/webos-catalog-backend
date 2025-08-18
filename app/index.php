@@ -1,5 +1,6 @@
 <?php
 $config = include('../WebService/config.php');
+include("../common.php");
 
 //figure out what protocol to use
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -12,13 +13,28 @@ $req = explode('/', $_SERVER['REQUEST_URI']);
 $query = end($req);
 $query = str_replace("+", "", $query);
 $dest_page = $protocol. $config["service_host"];
-$app_path = $dest_page . "/WebService/getSearchResults.php?app=". $query;
 
-//get the results
-$app_file = fopen($app_path, "rb");
-$app_content = stream_get_contents($app_file);
-fclose($app_file);
-$app_response = json_decode($app_content, true);
+//get the results directly without HTTP request to avoid rate limiting
+$fullcatalog = load_catalogs(array("../newerAppData.json", "../archivedAppData.json"));
+$search_str = urldecode(strtolower($query));
+$search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
+
+$results = [];
+//Loop through all apps
+foreach ($fullcatalog as $this_app => $app_a) {
+	//Look for matches
+	if (strtolower($app_a["title"]) == $search_str || 
+		$search_str == $app_a["id"] ||
+		(strpos(strtolower($app_a["title"]), $search_str) !== false) || 
+		(strpos(strtolower(str_replace(" ", "", $app_a["title"])), $search_str) !== false) 
+	  ) 
+	{
+		array_push($results, $app_a);
+	}
+}
+$responseObj = new stdClass();
+$responseObj->data = $results;
+$app_response = json_decode(json_encode($responseObj), true);
 
 //send them to result if exact match, or search page if not
 $dest_page = $protocol. $config["service_host"];

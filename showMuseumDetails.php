@@ -45,7 +45,6 @@ else
     $PROTOCOL = "http://";
 
 // Get app detail data directly from metadata host to avoid rate limiting
-$config = include('WebService/config.php');
 $meta_path = "http://" . $config["metadata_host"] . "/" . $found_id . ".json";
 
 $meta_file = fopen($meta_path, "rb");

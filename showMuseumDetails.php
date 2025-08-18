@@ -25,12 +25,12 @@ if (isset($_GET["app"])) {
 	$search_str = $_GET["app"];
 	$search_str = urldecode(strtolower($search_str));
 	$search_str = preg_replace("/[^a-zA-Z0-9 ]+/", "", $search_str);
-	$found_app;
-	foreach ($fullcatalog as $this_app => $app_a) {
-		if (strtolower($app_a["title"]) == $search_str || $app_a["id"] == $search_str) {
-			$found_app = $app_a;
-			$found_id = $found_app["id"];
-		}
+	
+	// Use common search function to find the app
+	$results = search_apps($fullcatalog, $search_str, true); // Include adult content for details page
+	if (count($results) > 0) {
+		$found_app = $results[0]; // Get first match
+		$found_id = $found_app["id"];
 	}
 }
 if ($found_id == "null") {

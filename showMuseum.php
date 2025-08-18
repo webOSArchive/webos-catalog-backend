@@ -67,7 +67,7 @@ if (isset($_GET['category']) && isset($_GET['count']))
 	$_adult = strpos($adult, 'true') !== false;
 	
 	$results = filter_apps_by_category($fullcatalog, $category, $_adult, $count);
-	$app_response = array('data' => array('data' => $results));
+	$app_response = array('data' => $results);
 }
 elseif (isset($_GET['search']))
 {
@@ -79,7 +79,7 @@ elseif (isset($_GET['search']))
 	$_adult = strpos($adult, 'true') !== false;
 	
 	$results = search_apps($fullcatalog, $search_str, $_adult);
-	$app_response = create_app_response($results);
+	$app_response = array('data' => $results);
 }
 
 //Figure out where to go back to

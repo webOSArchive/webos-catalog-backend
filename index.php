@@ -84,11 +84,11 @@ echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRo
         </a> | <a href="http://www.webosarchive.org/docs/appstores/">Help</a>
         <br>
         <a class="download-link" href="https://github.com/h8pewou/legacy-webos-feeds/blob/main/README.md#wosa-feed">
-           <img src="assets/preware-icon.png" style="vertical-align:middle" alt="Add to Preware" title="Add to Preware" width="48" height="48"/> Add to Preware 
+           <img src="assets/preware-icon.png" style="vertical-align:middle" alt="Add to Preware" title="Add to Preware" width="48" height="48"/> Add to Preware</a> | <a href="https://archive.org/details/webosappcatalog"> Download Archive
         </a>
         <br>
         <a class="download-link" href="showMuseum.php">
-           <img src="assets/browser-icon.png" style="vertical-align:middle" alt="Browse Online" title="Browse Online" width="48" height="48"/> Browse Online </a>| <a href="https://weboslives.eu/feeds/">Alternate Site
+           <img src="assets/browser-icon.png" style="vertical-align:middle" alt="Browse Online" title="Browse Online" width="48" height="48"/> Browse Online </a> | <a href="https://weboslives.eu/feeds/">Alternate Site
 		</a>
       </p>
     </div>

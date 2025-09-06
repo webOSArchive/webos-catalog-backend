@@ -88,8 +88,8 @@ echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRo
         </a>
         <br>
         <a class="download-link" href="showMuseum.php">
-           <img src="assets/browser-icon.png" style="vertical-align:middle" alt="Browse Online" title="Browse Online" width="48" height="48"/> Browse Online
-        </a>
+           <img src="assets/browser-icon.png" style="vertical-align:middle" alt="Browse Online" title="Browse Online" width="48" height="48"/> Browse Online </a>| <a href="https://weboslives.eu/feeds/">Alternate Site
+		</a>
       </p>
     </div>
     <div id="hero">

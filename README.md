@@ -48,12 +48,12 @@ This file is used when an out-of-date version of the App Museum II front-end att
 While this project represents the back-end (and web-based front-end) of App Museum II, it depends on archived content that has been preserved by the community. webOS Archive does not host any binaries. By changing the `WebService/config.php` file you can point to community hosts for each set of content.
 
 + **AppMetadata**: Detailed app meta data for each app. Available in this [GitHub repository](https://www.github.com/codepoet80/webos-catalog-metadata).
-+ **AppImages**: Art (icon and screenshot) files for each app. Available in this [archive](https://archive.org/details/webOSAppCatalogArchive-Complete).
-+ **AppPackages**: Installable IPKs (apps) preserved from the HP/Palm App Catalog. Also available in this [archive](https://archive.org/details/webOSAppCatalogArchive-Complete).
++ **AppImages**: Art (icon and screenshot) files for each app. Available in this [archive](https://archive.org/download/webosappcatalog-supplementary).
++ **AppPackages**: Installable IPKs (apps) preserved from the HP/Palm App Catalog. Also available in this [archive](https://archive.org/details/webosappcatalog).
 
 Links to archives of the entire App Museum II can be found at [appcatalog.webosarchive.org](http://appcatalog.webosarchive.org). 
 
-The full historical dataset includes other files that, for various reasons, are not a part of the Museum. These files are also a part of this [complete archive](https://archive.org/details/webOSAppCatalogArchive-Complete). Mirrors, like the host, must be not-for-profit.
+The full historical dataset includes other files that, for various reasons, are not a part of the Museum. These files are also a part of these two archives [1](https://archive.org/details/webosappcatalog), [2](https://archive.org/download/webosappcatalog-supplementary). Mirrors, like the host, must be not-for-profit.
 
 ## What is This?
 

@@ -210,8 +210,7 @@ include('meta-social-app.php');
 	?>
 	<div style="display:none;margin-top:18px">
 	<?php
-	echo (json_encode($app_a) . "<br><br>");
-	echo $content;
+	//echo $content;
 	?>
 </div>
 </body>

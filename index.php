@@ -63,7 +63,7 @@ if (strpos($outputObj["filename"], "://") === false) {
     @media all and (max-width: 599px) {
         #hero { padding-top: 0px !important; }
     }
-    small { font-size: 12px; }
+    small { font-size: 15px; }
   </style>
 </head>
 <body>

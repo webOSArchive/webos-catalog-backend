@@ -95,7 +95,7 @@ echo file_get_contents("https://www.webosarchive.org/menu.php?docRoot=" . $docRo
     <div id="hero">
       <img src="hero.png" width="480" alt="<?php echo $title ?>" />
       <p><small>Catalog metadata is available on <?php echo "<a href='" . $github . "'>GitHub</a>"?> | <a href="https://appcatalog.webosarchive.org/WebService/reports/">View Stats</a><br>
-      Many items are still missing! If you have your own archive, or an old device, please check the <a href="wanted.txt">wanted</a> <a href="wanted.csv">list</a>, or run the <a href="https://appcatalog.webosarchive.org/app/webOSAppScanner">App Scanner</a> on your device, and <a href="mailto:webosarchive@gmail.com">email us</a> if you have any matches!</small></p>
+      Many items are still missing! If you an old device or personal archive, check the <a href="wanted.txt">wanted</a> <a href="wanted.csv">list</a>, or run the <a href="https://appcatalog.webosarchive.org/app/webOSAppScanner">App Scanner</a> on your device, and <a href="mailto:webosarchive@gmail.com">email us</a> if you have any matches!</small></p>
     </div>
   </div>
   <div id="footer">

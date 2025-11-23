@@ -1014,7 +1014,6 @@ com.37tech.charliesheensoundboard_1.0.0_all.ipk
 com.zone303.cheaptextbooksearch_1.0.0_all.ipk
 com.cannytech.vegetablesandfruits_1.0.0_all.ipk
 com.dblpartners.ccsa_1.0.0_all.ipk
-com.glitchtechscience.enyo.checkbook_1.0.7_all.ipk
 com.speedymarks.palmpad.checklist_1.0.1_all.ipk
 de.calypsa.checkmate_1.0.0_all.ipk
 com.soundboardmasters.cheechandchongsoundboard_1.1.3_all.ipk

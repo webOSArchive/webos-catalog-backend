@@ -2036,7 +2036,6 @@ com.diniplay.glowingskypixi_2.60.0_all.ipk
 com.cellhigh.glucosediary_1.1.4_all.ipk
 com.vimukti.glucosetracker_1.0.1_all.ipk
 com.k2techservice.glutenfreemenususa_1.2.0_all.ipk
-com.engineequalscar.util.news_1.0.0_all.ipk
 com.mobifusion.mobirdr.goclimb_1.0.0_all.ipk
 com.mobileappmakerscom.gomikey_1.0.4_all.ipk
 com.mobileappmakerscom.gomikeylite_1.0.0_all.ipk
@@ -3333,7 +3332,6 @@ com.brighthouselabs.new2soccerfans_1.0.0_all.ipk
 com.appbookshop.epub.newportbeachreferencebook_1.0.0_all.ipk
 com.puggleware.newspro_1.6.1_all.ipk
 com.fxuniverse.newspics_1.0.2_all.ipk
-com.aeidataworks.newsradiofull_0.9.4_all.ipk
 com.mycompany.newspapergood_1.0.0_all.ipk
 com.brilaps.mobile.webos.newsfishing_1.0.0_all.ipk
 com.scienceapps.newspapercreator_1.7.0_all.ipk

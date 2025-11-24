@@ -6,7 +6,7 @@
 
 class RateLimit {
     private $rate_limit_dir = '__rateLimit';
-    private $default_limit = 100; // requests per window
+    private $default_limit = 300; // requests per window
     private $default_window = 3600; // 1 hour in seconds
     
     public function __construct() {

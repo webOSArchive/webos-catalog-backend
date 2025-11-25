@@ -81,7 +81,6 @@ com.scrollmotion.a90ofthegameishalfmentalandothe-9780345504876-rh_0.9.903_all.ip
 com.scrollmotion.a145thstreetshortstories-9780385729840-rh_0.9.903_all.ipk
 com.mobifusion.mobirdr.900diabeticrecipes_1.0.0_all.ipk
 com.infiniteappz.commonenggconverter_1.2.0_all.ipk
-com.csprod.truthordare_1.1.2_all.ipk
 com.appbookshop.beginnersguidetoyoga_1.0.0_all.ipk
 com.scrollmotion.aboldfreshpieceofhumanity-9780767930963-rh_0.9.903_all.ipk
 com.appible.aboyswillaudio_1.0.0_all.ipk
@@ -804,7 +803,6 @@ com.ddluk.braillealphabet_1.0.0_all.ipk
 com.followinstinct.brainboosteranultimateguide_2.0.5_all.ipk
 com.scrollmotion.brainfuel199mindexpandinginqui-9780307372567-rhca_0.9.90_all.ipk
 com.eighttwentydesign.mind-teasers_1.0.0_all.ipk
-com.glu.app.braingeniusdeluxe_1.0.0_all.ipk
 com.cubolibo.sdwen_1.0.5_all.ipk
 com.nanto.breadcrumbs_1.1.0_all.ipk
 com.bdrgames.breakthecode_1.1.0_all.ipk
@@ -1243,7 +1241,6 @@ com.cannytechnologies.costsavingscalculators_1.0.0_all.ipk
 com.infiniteappz.couchto10k_1.1.0_all.ipk
 com.infiniteappz.couchto5k_2.0.0_all.ipk
 com.vaibhavmishra.palmos.webos.fitness.couch25k_1.5.0_all.ipk
-com.tibfib.countdown_2.0.0_all.ipk
 com.speedymarks.palmpre.countdownr_1.0.0_all.ipk
 com.eventcounternet.countdowns_1.0.0_all.ipk
 com.freeworkzz.app.simplecountdownlite_1.0.2_all.ipk
@@ -1978,7 +1975,6 @@ com.cannytech.gangoffive_1.0.0_all.ipk
 com.cannytechnologies.gangoffive_1.0.1_all.ipk
 com.appleboymedia.garbagecollector_1.0.0_all.ipk
 com.clevermatrix.gardenplanner_1.0.0_all.ipk
-com.micro-tech-mich.gasbuddy_0.0.6_all.ipk
 com.zone303.gasprices_1.5.0_all.ipk
 com.yourdomain.app_0.0.1_all.ipk
 com.noinsultsoftware.gasmath_1.1.2_all.ipk
@@ -2022,7 +2018,6 @@ com.appjammers.apps.giftjammer_0.9.3_all.ipk
 com.cellhigh.gigdiary_1.1.0_all.ipk
 com.dijit.girlsrockbackgrounds_3.0.1_all.ipk
 com.kalemsoft.gizmo-pixi_1.0.0_all.ipk
-com.hiddenworldhut.gladthatsnotme_1.2.0_all.ipk
 com.infiniteappz.glassgowcomascale_1.3.0_all.ipk
 com.nanonino.glasgowmetro_1.0.1_all.ipk
 com.unmap.glbrefguide_1.001.0_all.ipk
@@ -2086,7 +2081,6 @@ com.scienceapps.lightningimpact_1.0.0_all.ipk
 com.discipleskies.gpsmaps_7.0.2_all.ipk
 com.discipleskies.gpsoutbackpro_6.3.0_all.ipk
 com.mycolleague.gpstracker_6.0.0_all.ipk
-com.l337tech.gpstrippanel_1.1.3_all.ipk
 com.mycolleague.gpsultimate_6.1.0_all.ipk
 com.merkel.vzgpswrestler_1.1.9_all.ipk
 net.bradleygraber.gpsdashboardplus_2.0.3_all.ipk
@@ -2344,7 +2338,6 @@ com.zuuka.how-to-train-your-dragon_1.0.1_all.ipk
 com.appbookshop.epub.howtowinatonlinepoker_1.0.0_all.ipk
 com.appible.howardsendaudio_1.0.0_all.ipk
 com.appible.howardsendaudiotext_1.0.0_all.ipk
-co.nvi.pulse_1.2.2_all.ipk
 com.bubbles.storageinfo_1.2.6_all.ipk
 com.mvolution.hrs_1.2.0_all.ipk
 com.openmerchantaccount.html_1.0.0_all.ipk
@@ -2450,7 +2443,6 @@ bz.tsung.instagrio_0.1.14.ipk
 com.mobifusion.mobirdr.spanishphrases_1.0.0_all.ipk
 net.twilightstudios.pandereta_1.0.0_all.ipk
 com.moresol.live.internationalsoccer_2.1.7_all.ipk
-com.l337tech.internetradiopro_1.0.3_all.ipk
 com.rustyapps.intersection_0.1.8_all.ipk
 com.machiapps.intervalalerter_1.4.0_all.ipk
 com.lieblsoftware.pregym_1.5.0_all.ipk
@@ -3900,7 +3892,6 @@ com.ula.quickcalc_1.0.0_all.ipk
 com.mobileenclave.app.quickchanger_1.0.4_all.ipk
 net.wizardapps.quickclip_1.0.1_all.ipk
 com.ubq.quickgrader.main_1.0.0_all.ipk
-com.shanerooni.quicksolve_0.8.6_all.ipk
 com.shanerooni.quickspell_0.8.6_all.ipk
 com.shanerooni.quicksuite_0.8.6_all.ipk
 com.elegatech.quicktionary_2.0.3_all.ipk
@@ -4465,7 +4456,6 @@ com.brighthouselabs.stlnflfans_1.0.0_all.ipk
 com.brighthouselabs.stlnhlfans_1.0.0_all.ipk
 com.mcdooglesoftware.seu_1.0.0_all.ipk
 stairs.to.heaven_1.0.0_all.ipk
-com.bioqapps.starslots_1.0.0_all.ipk
 com.soundboardmasters.startreksoundeffects_1.1.3_all.ipk
 com.soundboardmasters.starwars10soundboard_1.1.3_all.ipk
 tlh.roneyii.sbi2010_1.0.0_all.ipk
@@ -4552,7 +4542,6 @@ com.brighthouselabs.swamivivekanadaquotes_1.1.0_all.ipk
 com.brighthouselabs.swa2soccerfans_1.0.0_all.ipk
 com.biocandy.swapndrop_0.6.5_all.ipk
 com.slyfoxgames.sweepr_1.5.0_all.ipk
-com.slyfoxgames.sweeprhd_1.7.7_all.ipk
 com.warlord.candy_2.2.1_all.ipk
 com.infiniteappz.swimmingtrainer_1.0.0_all.ipk
 com.brighthouselabs.swissrecipes_1.0.0_all.ipk
@@ -4591,7 +4580,6 @@ com.mobifusion.mobirdr.chineseceligion_1.0.0_all.ipk
 com.iopalmapps.tapflickslide_1.1.3_all.ipk
 com.kogmz.tapit_1.1.0_all.ipk
 com.kogmz.tapitforpixi_1.1.0_all.ipk
-com.l337tech.tap-to-the-beat-pro_1.0.0_all.ipk
 com.pixilabs.ttrlite_1.0.6_all.ipk
 com.pixilabs.ttrlitehd_1.0.6_all.ipk
 com.onecrayon.touchnote_1.3.1_all.ipk
@@ -5556,7 +5544,6 @@ com.l4mobile.ilovethe80s_1.0.2_all.ipk
 com.rosoa.vibratemassage_1.0.0_all.ipk
 com.brighthouselabs.victorhugoquotes_1.1.0_all.ipk
 com.forwebos.videocook_1.0.0_all.ipk
-com.bytesequencing.pre.videopoker_1.0.1_all.ipk
 com.ottg.videovixens_1.0.0_all.ipk
 com.videoavolonte.vav_1.0.0_all.ipk
 com.nanonino.viennacityguide_1.0.0_all.ipk

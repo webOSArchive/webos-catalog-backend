@@ -125,20 +125,20 @@
 
 ## 2025-11-25
 ### Added Discovered IPKs (thanks to frcal)
-com.glitchtechscience.enyo.checkbook_1.0.7_all.ipk
-com.engineequalscar.util.news_1.0.0_all.ipk
-com.aeidataworks.newsradiofull_0.9.4_all.ipk
+- com.glitchtechscience.enyo.checkbook_1.0.7_all.ipk
+- com.engineequalscar.util.news_1.0.0_all.ipk
+- com.aeidataworks.newsradiofull_0.9.4_all.ipk
 ### Added Discovered IPKs (Thanks to ILovePeaches)
-co.nvi.pulse_1.2.2_all.ipk
-com.bioqapps.starslots_1.0.0_all.ipk
-com.bytesequencing.pre.videopoker_1.0.1_all.ipk
-com.csprod.truthordate_1.1.2_all.ipk
-com.glu.app.braingeniusdelux_1.0.0_all.ipk
-com.hiddenworldhut.gladthatsnotme_1.2.0_all.ipk
-com.l337tech.gpstrippanel_1.1.3_all.ipk
-com.l337tech.internetradiopro_1.0.3_all.ipk
-com.l337tech.tap-to-the-beat-pro_1.0.0_all.ipk
-com.micro-tech-mich.gasbuddy_0.0.6_all.ikp
-com.shanerooni.quicksolve_0.7.5_all.ipk
-com.slyfoxgames.sweeprhd_1.7.7_all.ipk
-com.tibfib.countdown_2.0.0_all.ipk
+- co.nvi.pulse_1.2.2_all.ipk
+- com.bioqapps.starslots_1.0.0_all.ipk
+- com.bytesequencing.pre.videopoker_1.0.1_all.ipk
+- com.csprod.truthordate_1.1.2_all.ipk
+- com.glu.app.braingeniusdelux_1.0.0_all.ipk
+- com.hiddenworldhut.gladthatsnotme_1.2.0_all.ipk
+- com.l337tech.gpstrippanel_1.1.3_all.ipk
+- com.l337tech.internetradiopro_1.0.3_all.ipk
+- com.l337tech.tap-to-the-beat-pro_1.0.0_all.ipk
+- com.micro-tech-mich.gasbuddy_0.0.6_all.ikp
+- com.shanerooni.quicksolve_0.7.5_all.ipk
+- com.slyfoxgames.sweeprhd_1.7.7_all.ipk
+- com.tibfib.countdown_2.0.0_all.ipk

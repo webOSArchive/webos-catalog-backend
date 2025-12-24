@@ -3,19 +3,20 @@
 <?php
 //This file is only used for advertising on a hosting webserver
 
+//Figure out what protocol the client wanted
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+        $PROTOCOL = "https";
+} else {
+        $PROTOCOL = "http";
+}
+
 //App Details
 $title = "webOS App Museum II";
 $subtitle = " | webOS Archive";
-$description = "The App Museum is a community project to archive, restore and provide access to the historical catalog of apps for Palm/HP's defunct mobile platform, webOS.";
+$description = "The App Museum is a community project to archive, restore and provide access to the historical catalog of apps for Palm/HP's defunct mobile platform, webOS>
 $github = "https://github.com/webosarchive/";
-$icon = "assets/icon.png";
-
-//Figure out what protocol the client wanted
-if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-	$PROTOCOL = "https";
-} else {
-	$PROTOCOL = "http";
-}
+$homeLink = $PROTOCOL."://appcatalog.webosarchive.org";
+$icon = $homeLink."/assets/icon.png";
 
 $config = include('WebService/config.php');
 

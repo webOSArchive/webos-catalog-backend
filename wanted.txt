@@ -2501,7 +2501,6 @@ com.openmerchantaccount.javascript_1.0.0_all.ipk
 com.mobileappsmaui.javascriptproquickguide_1.1.0_all.ipk
 com.longbeachit.kjazzplus_1.0.10_all.ipk
 com.cohosoft.jballs_1.0.1_all.ipk
-com.jdisoft.jdisky_1.2.2_all.ipk
 com.appbookshop.jeannedarc_1.0.0_all.ipk
 com.jaygeiger.jediworthy_1.0.2_all.ipk
 com.eviltech.snookisoundboard_1.4.1_all.ipk
@@ -2880,7 +2879,6 @@ com.iopalmapps.magicfortuneball_1.2.2_all.ipk
 enyo.qpaulson.magicminutes_1.0.0_all.ipk
 com.cannytech.cannon_1.0.0_all.ipk
 com.jakyl.msd_1.3.1_all.ipk
-de.djfun.mahjongg_0.0.8_all.ipk
 com.newnessdevelopments.maillists_0.8.5_all.ipk
 org.ozeta.mailspoof_1.0.2_all.ipk
 com.appbookshop.epub.maintainafithealthybody_1.0.0_all.ipk

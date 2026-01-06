@@ -142,3 +142,8 @@
 - com.shanerooni.quicksolve_0.7.5_all.ipk
 - com.slyfoxgames.sweeprhd_1.7.7_all.ipk
 - com.tibfib.countdown_2.0.0_all.ipk
+
+## 2026-01-06
+### Added Discovered IPKs (thanks to FairPlay137)
+- com.jdisoft.jdisky_1.2.2_all
+- de.djfun.mahjongg_0.0.8_all.ipk
